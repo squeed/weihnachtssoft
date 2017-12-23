@@ -117,7 +117,7 @@ Jeez. This is embarrassing. You suddenly realize that you don’t remember much 
 
 When you’re done shopping, you can leave the Weihnachtsmarkt and go home. 
 
-You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[ [[wool-&gt;Jürgen and Ulrike]] ]goods to your right. Behind you is the [[exit-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="394,284" size="100,100">You try to remember what your mother-in-law is like. {
+You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[ [[wool-&gt;Jürgen and Ulrike]] ]goods to your right. Behind you is the [[exit-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="264,500" size="100,100">You try to remember what your mother-in-law is like. {
 (if: $MILnonreligious is true)[She&#39;s not really religious; best stay away from holiday things that are too Jesus-centered.]
 (if: $MILshort is true)[She&#39;s pretty short.]
 (if: $MILjewelry is true)[She likes jewelry.]
@@ -228,18 +228,18 @@ Overpriced pizza from Famous Famiglia&#39;s. Pepperoni.]
 
 (click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-whirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]]
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over-&gt;end]].]]]
 
 (click: ?b)[(replace: ?q)[(if: $gift is not &quot;Mets bobblehead&quot;)[(set: $gift to &quot;Mets bobblehead&quot;)(set: $wallet to it - 15)&quot;Good choice,&quot; says the cashier. &quot;Though last season was a rough one, eh? Wonder if they&#39;ll re-sign – &quot;
 He stops as you thrust your US credit card wordlessly into his face. He blinks, runs the card, and - thank god - it seems to work. &quot;Want me to wrap that up for you?&quot; asks the cashier. But you&#39;ve already grabbed the bobblehead and sprinted out of the store.
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]]
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over-&gt;end]].]]]
 
 (click: ?c)[(replace: ?c)[What are you thinking?! No, you cannot give your mother-in-law a slice of pizza. Be cool, buddy, you got this. There&#39;s gotta be something here you can buy her.]]
 ]
 (else:) [As soon as you walk off the jetway, you sprint towards customs, beating most of the rest of the passengers. As you wait in line at customs, you touch the gift in your carry-on, grateful that you found something suitable at the Christmas market and don&#39;t have to buy your mother-in-law something last-minute at the airport. 
 
-Once you clear customs, you jog to your gate. Sweet, you still have five minutes to spare! You refill your water bottle in the bathroom, board the plane, buckle your seatbelt, and settle in for the [[last leg of your flight]].]</tw-passagedata><tw-passagedata pid="11" name="The Girls" tags="" position="869,366" size="100,100">(set: $showFooter to 2)
+Once you clear customs, you jog to your gate. Sweet, you still have five minutes to spare! You refill your water bottle in the bathroom, board the plane, buckle your seatbelt, and settle in for the [[last leg of your flight-&gt;end]].]</tw-passagedata><tw-passagedata pid="11" name="The Girls" tags="" position="869,366" size="100,100">(set: $showFooter to 2)
 (set: $seenG to true)
 “Hiiiiiiiiiiiiiiiiiiiii!” You’ve walked straight into an ambush. Line, Lena, Anna, and Laura, four colleagues from your office, enfold you in a group hug, all fuzzy scarves and braids. Their cheeks are already extremely rosy.
 
@@ -378,7 +378,7 @@ Since your mother-in-law does not follow German soccer, the classic Bavarian blu
 You don&#39;t understand these. But you gotta admit, this is a genius use for extra industrial-grade ball bearings that failed inspection.
 (click: ?d)[(if: $gift is not &quot;fidget spinner&quot;)[(set: $gift to &quot;fidget spinner&quot;)(set: $wallet to it - 3)]]
 
-To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]] ](else:)[ [[wood-fired oven-&gt;Ron]] ]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="522,24" size="100,100">(if: $showFooter is 1)[ (set: $spirit to it - 1)(set: $hunger to it + 1) (if: $hunger &gt; 10)[ (set: $spirit to it - 1) ]
+To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]] ](else:)[ [[wood-fired oven-&gt;Ron]] ]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="375,370" size="100,100">(if: $showFooter is 1)[ (set: $spirit to it - 1)(set: $hunger to it + 1) (if: $hunger &gt; 10)[ (set: $spirit to it - 1) ]
 
 Or, swing by the nearest (if: $seenG)[ [[Glühwein Vendor]] ](else:)[ [[Glühwein Vendor-&gt;The Girls]]]
 
@@ -465,7 +465,8 @@ As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love
 
 &lt;strong&gt;[[Weihnachtsmarkt Simulator-&gt;At the Office]]&lt;/strong&gt;
 
-&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="your travels are almost over" tags="" position="284,282" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="last leg of your flight" tags="" position="524,261" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="673,23" size="100,100">So, you made it! Christmas day!
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
