@@ -307,14 +307,14 @@ Or, swing by the nearest (if: $seenG)[ [[Glühwein Vendor]] ](else:)[ [[Glühwei
 
 ](else-if: $showFooter is 2)[
 (set: $showFooter to 1)
-]</tw-passagedata><tw-passagedata pid="21" name="spirit" tags="header" position="381,400.5" size="100,100">(if: $showFooter is 1)[(if: $spirit &lt; -5)[
-(go-to: &quot;Spirit-too-low&quot;)
-](else-if: $spirit &lt; -2)[
+]</tw-passagedata><tw-passagedata pid="21" name="spirit" tags="header" position="381,400.5" size="100,100">(if: $showFooter is 1)[(if: $spirit &lt; -3)[
+(set: $showFooter to 0)(go-to: &quot;Spirit-too-low&quot;)
+](else-if: $spirit &lt; -1)[
 Your holiday spirit is dangerously low. Unless you increase it, you’re going to have to go home very soon.
 ](else-if: $spirit &lt; 0)[
-Your holiday spirit is getting low. Your fingers are cold, your legs are tired, and you’re feeling ready to go&lt; home. If you’re not done shopping, you should find a way to increase your holiday spirit.
+Your holiday spirit is getting low. Your fingers are cold, your legs are tired, and you’re feeling ready to go home. If you’re not done shopping, you should find a way to increase your holiday spirit.
 ](else-if: $spirit &gt; 8)[
-(go-to: &quot;Spirit-too-high&quot;)
+(set: $showFooter to 0)(go-to: &quot;Spirit-too-high&quot;)
 ](else-if: $spirit &gt; 6)[
 Your holiday spirit is dangerously high. You’re feeling warm, happy, and completely useless. You realize you’ve started singing “Jingle Bells” and passersby are staring at you. Any more holiday spirit, and you’ll have no choice but to go home.
 ](else-if: $spirit &gt; 4)[
