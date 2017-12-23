@@ -329,11 +329,15 @@ You [[make your way back to the market-&gt;Rahmbrot]]</tw-passagedata><tw-passag
 
 Cheery mechanics and tradespeople inevitably gather around in amazement as the cook attaches another potato to the device and the fries fly out. In fact, it seems to be a very effective marketing technique. You begin to suspect that far more potatoes are processed than ever make it to the fryer.
 
-Spiral fries - 2 €
+|q&gt;[
+[Spiral fries - 2 €]&lt;a|
 Hot, salty, and greasy. A perfect complement to Glühwein.
 
-Spiral sweet-potato fries - 4 €
-They might be deep-fried, but at least they’re packed with beta carotene - that’s healthy, right?
+[Spiral sweet-potato fries - 4 €]&lt;b|
+They might be deep-fried, but at least they’re packed with beta carotene - that’s healthy, right?]
+
+(click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
+(click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
 
 To your left, there&#39;s a [[cosy-looking stand-&gt;Wool]], and to your right, there seems to be an (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]] ].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
 
@@ -372,7 +376,7 @@ Your holiday spirit is very high. The lights and sounds are beginning to blur. Y
 You&#39;re really hungry now
 ](else-if: $hunger &gt; 7)[
 You are starting to get a bit hungry
-]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="718,858" size="100,100">Very dear family and friends:
+]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
 
 As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love about life in Germany, but we particularly love the Weihnachtsmärkte, or Christmas markets. So this Christmas, we wanted to bring the Weihnachtsmarkt experience to you:
 
