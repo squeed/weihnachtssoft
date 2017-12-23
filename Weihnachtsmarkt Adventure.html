@@ -270,10 +270,11 @@ This is an oddly-detailed chocolate etching of da Vinci’s Last Supper.
 
 To the left you see some kind of [[roasted nuts-&gt;Chestnuts]], and to the right there&#39;s the [[entrance-&gt;Market entrance]].</tw-passagedata><tw-passagedata pid="13" name="Rahmbrot" tags="" position="812,209" size="100,100">A warm, yeasty smell wafts out of a wood-fired oven as an apron-clad baker sets down a tray of Rahmbrot. This flat bread topped with cream, ham, and green onions is supposedly a medieval peasant&#39;s snack. The pants of these medieval peasants must have been roomy.
 
-Rahmbrot - 3 €
+|q&gt;[Rahmbrot - 3 €]
+(click-replace: ?q)[(set: $wallet to $it - 3)(set: $hunger to 0)
 The baker starts to cut off a piece on the end. You politely ask for a middle piece. The baker sighs and slides a middle piece onto a square of white cardboard.
 
-You thank the vendor, your hands full of greasy deliciousness, and tuck in, already wishing you’d worn roomier pants.
+You thank the vendor, your hands full of greasy deliciousness, and tuck in, already wishing you’d worn roomier pants.]
 
 To your right is the [[faint scent of patchouli-&gt;Hippie Stuff]], and to your left is an oddly (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]] ].</tw-passagedata><tw-passagedata pid="14" name="Wool" tags="" position="977,510" size="100,100">This stall, which boasts all manner of alpaca-related goods, is nothing if not cozy. The counter is piled with hats and mittens, while scarves and blankets cascade from the ceiling. The proprietor, ironically, seems to be immune to the cold, and is counting money in a t-shirt and jeans.
 
@@ -299,10 +300,11 @@ This skirt looks extremely comfortable. You hold it up to your waist in front of
 
 To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]] , and to the right you see some kind of (if: $seenR)[ [[cheesy bread-&gt;Ron]] ](else:)[ [[cheesy bread-&gt;Rahmbrot]] ]</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="530,379" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. Thank goodness this tiny cart, and its beanie-clad proprietor, haven’t invented some lily-gilding abomination like salted caramel chestnuts, honey mustard chestnuts, or spicy paprika chestnuts. The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
 
-100g roasted chestnuts - 2 €
-The vendor scrapes a spatula full of chestnuts into a paper cone. As he hands it to you, you can feel the warm chestnuts through the paper. 
+[100g roasted chestnuts - 2 €]&lt;a|
 
-You squeeze open a charred, piping-hot husk and bite into the nut’s tender inside. Classic! Though you have to admit, roasted chestnuts always smell better than they taste. You drop the husk back in the paper cone and devour the rest of your nutty bounty.
+(click-replace: ?a)[(set: $wallet to it - 2)(set: $hunger to 0)The vendor scrapes a spatula full of chestnuts into a paper cone. As he hands it to you, you can feel the warm chestnuts through the paper. 
+
+You squeeze open a charred, piping-hot husk and bite into the nut’s tender inside. Classic! Though you have to admit, roasted chestnuts always smell better than they taste. You drop the husk back in the paper cone and devour the rest of your nutty bounty.]
 
 To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to the right there&#39;s a (if: $seenA)[ [[chocolate stand-&gt;Chocolate]] ](else:)[ [[chocolate stand-&gt;Alessandro]] ]</tw-passagedata><tw-passagedata pid="17" name="Ron" tags="" position="803,76" size="100,100">(set: $showFooter to 2)
 (set: $seenR to true)
@@ -351,7 +353,7 @@ While you instantly recognize the classic Bavarian blue-and-white checkered patt
 Fidget spinner - 3 €
 For when you need a few extra industrial-grade ball bearings that failed inspection.
 
-To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]] ](else:)[ [[wood-fired oven-&gt;Ron]] ]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="522,24" size="100,100">(if: $showFooter is 1)[ (set: $spirit to it - 1)
+To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]] ](else:)[ [[wood-fired oven-&gt;Ron]] ]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="522,24" size="100,100">(if: $showFooter is 1)[ (set: $spirit to it - 1)(set: $hunger to it + 1) (if: $hunger &gt; 10)[ (set: $spirit to it - 1) ]
 
 Or, swing by the nearest (if: $seenG)[ [[Glühwein Vendor]] ](else:)[ [[Glühwein Vendor-&gt;The Girls]]]
 
@@ -369,7 +371,14 @@ Your holiday spirit is getting low. Your fingers are cold, your legs are tired, 
 Your holiday spirit is dangerously high. You’re feeling warm, happy, and completely useless. You realize you’ve started singing “Jingle Bells” and passersby are staring at you. Any more holiday spirit, and you’ll have no choice but to go home.
 ](else-if: $spirit &gt; 4)[
 Your holiday spirit is very high. The lights and sounds are beginning to blur. You feel fabulous, but you’re losing your focus. Be careful, or you’re going to have to go home – and you’ll be hung over on tomorrow’s flight.
-]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
+]
+(if: $hunger &gt; 10)[
+You&#39;re really hungry now
+](else-if: $hunger &gt; 7)[
+You are starting to get a bit hungry
+]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)</tw-passagedata>
+
+<tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
 
 As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love about life in Germany, but we particularly love the Weihnachtsmärkte, or Christmas markets. So this Christmas, we wanted to bring the Weihnachtsmarkt experience to you:
 
