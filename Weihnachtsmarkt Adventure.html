@@ -66,7 +66,9 @@ body {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -95,7 +97,7 @@ A colleague is leaving at the same time. &quot;Hey, let&#39;s grab a Feierabendb
 
 
 (set: $ubahn to &quot;You walk through the gloomy evening towards the nearest [[U-Bahn]].&quot;)
-</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="395,288" size="100,100">Money: $wallet €</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="1023,763" size="100,100">You check your wallet. You have $wallet € in cash. They don&#39;t take credit cards at the Weihnachtsmarkt (or anywhere in Germany, it seems).
+</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="395,288" size="100,100">Money: $wallet € - Current Gift: $gift</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="1023,763" size="100,100">You check your wallet. You have $wallet € in cash. They don&#39;t take credit cards at the Weihnachtsmarkt (or anywhere in Germany, it seems).
 
 As the U-Bahn rumbles through the city, your thoughts turn to your mother-in-law. You want to get her something she&#39;ll treasure. You&#39;ve found great gifts for the rest of your family, but you just haven&#39;t managed to find the perfect gift for her.
 
@@ -341,8 +343,9 @@ They might be deep-fried, but at least they’re packed with beta carotene - tha
 
 To your left, there&#39;s a [[cosy-looking stand-&gt;Wool]], and to your right, there seems to be an (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]] ].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
 
-Phone case with a sparkly skull - 10 €
+[Phone case with a sparkly skull - 10 €]&lt;a|
 It doesn’t really seem like her style, and you can’t remember what model of phone she has, but it definitely is sparkly.
+(click: ?a)[(if: $gift is not &quot;Sparkly skull phone case&quot;)[(set: $gift to &quot;Sparkly skull phone case&quot;)(set: $wallet to it - 10)]]
 
 Phone case with sparkly imitation hello kitty - 10 €
 Tacky doesn’t even begin to describe this. The box says that it is for a model of phone that you know was recalled years ago.
@@ -376,7 +379,7 @@ Your holiday spirit is very high. The lights and sounds are beginning to blur. Y
 You&#39;re really hungry now
 ](else-if: $hunger &gt; 7)[
 You are starting to get a bit hungry
-]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
+]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)(set: $gift to &quot;None&quot;)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
 
 As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love about life in Germany, but we particularly love the Weihnachtsmärkte, or Christmas markets. So this Christmas, we wanted to bring the Weihnachtsmarkt experience to you:
 
