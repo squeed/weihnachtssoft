@@ -99,7 +99,7 @@ A colleague is leaving at the same time. &quot;Hey, let&#39;s grab a Feierabendb
 
 
 (set: $ubahn to &quot;You walk through the gloomy evening towards the nearest [[U-Bahn]].&quot;)
-</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="395,288" size="100,100">Money: $wallet € - Current Gift: $gift</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="1023,763" size="100,100">You check your wallet. You have $wallet € in cash. They don&#39;t take credit cards at the Weihnachtsmarkt (or anywhere in Germany, it seems).
+</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="271,339" size="100,100">Money: $wallet € - Current Gift: $gift</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="1023,763" size="100,100">You check your wallet. You have $wallet € in cash. They don&#39;t take credit cards at the Weihnachtsmarkt (or anywhere in Germany, it seems).
 
 As the U-Bahn rumbles through the city, your thoughts turn to your mother-in-law. You want to get her something she&#39;ll treasure. You&#39;ve found great gifts for the rest of your family, but you just haven&#39;t managed to find the perfect gift for her.
 
@@ -115,7 +115,7 @@ Jeez. This is embarrassing. You suddenly realize that you don’t remember much 
 
 When you’re done shopping, you can leave the Weihnachtsmarkt and go home. 
 
-You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[ [[wool-&gt;Jürgen and Ulrike]] ]goods to your right. Behind you is the [[exit-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="397,162" size="100,100">You try to remember what your mother-in-law is like. {
+You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[ [[wool-&gt;Jürgen and Ulrike]] ]goods to your right. Behind you is the [[exit-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="394,284" size="100,100">You try to remember what your mother-in-law is like. {
 (if: $MILnonreligious is true)[She&#39;s not really religious; best stay away from holiday things that are too Jesus-centered.]
 (if: $MILshort is true)[She&#39;s pretty short.]
 (if: $MILjewelry is true)[She likes jewelry.]
@@ -210,28 +210,45 @@ Jürgen got to know your dad back in high school: Jürgen did an exchange year i
 [if warm] &quot;At least you are going somewhere warm,&quot; says Ulrike. &quot;We need to get out of this cold, too. We are excited for our trip to Mallorca over New Years. Anyway, do give our best wishes to your father, when you see him.&quot; 
 
 &quot;Of course I&#39;ll say hi to him for you, and you two have a lovely trip,&quot; you say. &quot;Don&#39;t forget your sunscreen!&quot; The three of you laugh, exchange another hug, and [[part ways-&gt;Wool]].
-</tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="406,26" size="100,100">(set $showFooter to 0)
+</tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set $showFooter to 0)
 You land at Newark Airport, where you only have a 45-minute layover – you knew this was stupid, but it was the cheapest flight. 
 
-[if you don&#39;t have something] As soon as you walk off the jetway, you break into a jog. You really do have to get something for your mother-in-law, even if it&#39;s not perfect. As you&#39;re running through the terminal, you decide to duck into a newsstand to grab something, anything.
+{(if: $gift is &quot;none&quot;)[As soon as you walk off the jetway, you break into a jog. You really do have to get something for your mother-in-law, even if it&#39;s not perfect. As you&#39;re running through the terminal, you decide to duck into a newsstand to grab something, anything.
 
-T-shirt that says &quot;Up Yours, I&#39;m from Newark&quot; - 20 €
+|q&gt;[
+[Spiral fries - 2 €]&lt;a|
+Hot, salty, and greasy. A perfect complement to Glühwein.
+
+[Spiral sweet-potato fries - 4 €]&lt;b|
+They might be deep-fried, but at least they’re packed with beta carotene - that’s healthy, right?]
+
+(click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
+(click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
+
+|q&gt;[[T-shirt that says &quot;Up Yours, I&#39;m from Newark&quot; - 20 €]&lt;a|
 They only have XXL shirts left. Oh well, she can wear it as a nightshirt. That&#39;s cool, right?
-You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
 
-Mets bobblehead - 15 €
+[Mets bobblehead - 15 €]&lt;b|
 Your mother-in-law likes sports. Actually no, she hates sports. Agh, whatever. This is a collectors&#39; item, right? 
-&quot;Good choice,&quot; says the cashier. &quot;Though last season was a rough one, eh? Wonder if they&#39;ll re-sign – &quot;
+
+[Slice of pizza - 5 €]&lt;c|
+Overpriced pizza from Famous Famiglia&#39;s. Pepperoni.]
+
+(click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-whirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
+
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]
+
+(click: ?b)[(replace: ?q)[(if: $gift is not &quot;Mets bobblehead&quot;)[(set: $gift to &quot;Mets bobblehead&quot;)(set: $wallet to it - 15)&quot;Good choice,&quot; says the cashier. &quot;Though last season was a rough one, eh? Wonder if they&#39;ll re-sign – &quot;
 He stops as you thrust your US credit card wordlessly into his face. He blinks, runs the card, and - thank god - it seems to work. &quot;Want me to wrap that up for you?&quot; asks the cashier. But you&#39;ve already grabbed the bobblehead and sprinted out of the store.
 
-Slice of pizza - 5 €
-What are you thinking?! No, you cannot give your mother-in-law a slice of pizza. Be cool, buddy, you got this. There&#39;s gotta be something here you can buy her.
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right?
+(click: ?c)[(replace: ?c)[What are you thinking?! No, you cannot give your mother-in-law a slice of pizza. Be cool, buddy, you got this. There&#39;s gotta be something here you can buy her.]]
 
-[if you do have something] As soon as you walk off the jetway, you sprint towards customs, beating most of the rest of the passengers. As you wait in line at customs, you touch the gift in your carry-on, grateful that you found something suitable at the Christmas market and don&#39;t have to buy your mother-in-law something last-minute at the airport. 
+]}
+(else:) [As soon as you walk off the jetway, you sprint towards customs, beating most of the rest of the passengers. As you wait in line at customs, you touch the gift in your carry-on, grateful that you found something suitable at the Christmas market and don&#39;t have to buy your mother-in-law something last-minute at the airport. 
 
-Once you clear customs, you jog to your gate. Sweet, you still have five minutes to spare! You refill your water bottle in the bathroom, board the plane, buckle your seatbelt, and settle in for the last leg of your flight.</tw-passagedata><tw-passagedata pid="11" name="The Girls" tags="" position="869,366" size="100,100">(set: $showFooter to 2)
+Once you clear customs, you jog to your gate. Sweet, you still have five minutes to spare! You refill your water bottle in the bathroom, board the plane, buckle your seatbelt, and settle in for the [[last leg of your flight]].]</tw-passagedata><tw-passagedata pid="11" name="The Girls" tags="" position="869,366" size="100,100">(set: $showFooter to 2)
 (set: $seenG to true)
 “Hiiiiiiiiiiiiiiiiiiiii!” You’ve walked straight into an ambush. Line, Lena, Anna, and Laura, four colleagues from your office, enfold you in a group hug, all fuzzy scarves and braids. Their cheeks are already extremely rosy.
 
@@ -260,15 +277,17 @@ The conversation turns to work, or rather, to the other people in the office. An
 
 (click: ?no)[(replace: ?q)[“I really can’t,” you say. “Battling a Kater on a 7-hour flight is not my idea of a good way to start the holidays.” You hug everyone goodbye, wish them a “Guten Rutsch” into the new year, and head off.]]
 
-Go (link: &quot;back to the market&quot;)[(goto: (history: )&#39;s last)]</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,510" size="100,100">Not content at merely dominating the export market with quality industrial products, it seems that the Germans also have a habit of making chocolate versions of the things they already make. (Maybe they repurpose the injection molds?) Chocolate immersion blenders, chocolate wrenches and cordless drills, chocolate disk brake calipers, and chocolate insurance contracts lay before you, just to name a few things.
+Go (link: &quot;back to the market&quot;)[(goto: (history: )&#39;s last)]</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,510" size="100,100">Not content at merely dominating the export market with quality industrial products, it seems that the Germans also excel at making chocolate versions of the things they already make. (Maybe they repurpose the injection molds?) Chocolate immersion blenders, chocolate wrenches and cordless drills, chocolate disk brake calipers, and chocolate insurance contracts lay before you, just to name a few things.
 
-Nestled in the richly decorated tent, the proprietor is sipping her own glass of Glühwein and rummaging through the hundreds of differently-shaped treats. The customers ahead of you seem to be asking for a very specific item. She ducks around the back and returns triumphantly with a chocolate hex nut. Meanwhile, your gaze falls upon a few items:
+Nestled in the richly decorated tent, the proprietor is sipping her own glass of Glühwein and rummaging through the hundreds of differently-shaped treats. The customers ahead of you seem to be asking for a very specific item. She ducks around the back and returns triumphantly with a chocolate hex nut. Meanwhile, your gaze falls upon a few of the less industrial items:
 
-Drinking chocolate mix - 10 €
-Move over, Swiss Miss. This drinking chocolate looks delicious. Drop a shot of amaretto in, and you’ve got yourself some après-ski bliss.
+[Drinking chocolate mix - 10 €]&lt;a|
+Move over, Swiss Miss. This drinking chocolate looks delicious. Drop a shot of Kahlua in, and you’ve got yourself some après-ski bliss.
+(click: ?a)[(if: $gift is not &quot;drinking chocolate mix&quot;)[(set: $gift to &quot;drinking chocolate mix&quot;)(set: $wallet to it - 10)]]
 
-Chocolate fresco - 15 €
-This is an oddly-detailed chocolate etching of da Vinci’s Last Supper. 
+[Chocolate nativity scene - 15 €]&lt;b|
+This very thorough nativity scene includes Mary, Joseph, Jesus, magi, shepherds, angels, and assorted barnyard animals, made of milk, dark, and white chocolate.
+(click: ?b)[(if: $gift is not &quot;chocolate nativity scene&quot;)[(set: $gift to &quot;chocolate nativity scene&quot;)(set: $wallet to it - 15)]]
 
 To the left you see some kind of [[roasted nuts-&gt;Chestnuts]], and to the right there&#39;s the [[entrance-&gt;Market entrance]].</tw-passagedata><tw-passagedata pid="13" name="Rahmbrot" tags="" position="812,209" size="100,100">A warm, yeasty smell wafts out of a wood-fired oven as an apron-clad baker sets down a tray of Rahmbrot. This flat bread topped with cream, ham, and green onions is supposedly a medieval peasant&#39;s snack. The pants of these medieval peasants must have been roomy.
 
@@ -280,25 +299,31 @@ You thank the vendor, your hands full of greasy deliciousness, and tuck in, alre
 
 To your right is the [[faint scent of patchouli-&gt;Hippie Stuff]], and to your left is an oddly (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]] ].</tw-passagedata><tw-passagedata pid="14" name="Wool" tags="" position="977,510" size="100,100">This stall, which boasts all manner of alpaca-related goods, is nothing if not cozy. The counter is piled with hats and mittens, while scarves and blankets cascade from the ceiling. The proprietor, ironically, seems to be immune to the cold, and is counting money in a t-shirt and jeans.
 
-Blue alpaca-wool hat - 25 €
+[Blue alpaca-wool hat - 25 €]&lt;a|
 This fluffy hat with earflaps and a jaunty pompom will keep your ears toasty. It’s a flattering shade of royal blue.
+(click: ?a)[(if: $gift is not &quot;blue alpaca hat&quot;)[(set: $gift to &quot;blue alpaca hat&quot;)(set: $wallet to it - 25)]]
 
-Green alpaca-wool house shoes - 20 €
+[Green alpaca-wool house shoes - 20 €]&lt;b|
 Rule number one of German homes: always swap your street shoes at the door for a pair of fuzzy slippers, or Hausschuhe. These green felted slippers look both cheerful and comfortable.
+(click: ?b)[(if: $gift is not &quot;green alpaca house shoes&quot;)[(set: $gift to &quot;green alpaca house shoes&quot;)(set: $wallet to it - 20)]]
 
 Purple alpaca-wool kidney warmer - 30 €
 This knitted tube is the opposite of a crop top: it covers you from mid-back to mid-butt in order to keep your kidneys from getting chilly. Your German friends tell you that cold kidneys are very bad for you. As a gift, this will take some explanation, but maybe your mother-in-law would appreciate your concern for her kidneys.
+(click: ?c)[(if: $gift is not &quot;purple alpaca kidney warmer&quot;)[(set: $gift to &quot;purple alpaca kidney warmer&quot;)(set: $wallet to it - 30)]]
 
 There seems to be some kind of [[fried food-&gt;Pommes]] to your right, and the [[the entrance-&gt;Market entrance]] to your left.</tw-passagedata><tw-passagedata pid="15" name="Hippie Stuff" tags="" position="655,239" size="100,100">The Weihnachtsmarkt mostly smells of cinnamon and warm wine. But as you approach this stall, you get a massive whiff of patchouli. 
 
-“Verdauungshilfe” herb tea infusion - 10 €
+[“Verdauungshilfe” herb tea infusion - 10 €]&lt;a|
 This mixture of flower petals and leaves comes in an attractive tin, tied with a raffia bow, and it’s supposed to aid digestion. Tea is always nice on a chilly winter day, and good digestion never goes out of style. You ask the proprietor how it tastes. “It’s very healthy,” she replies.
+(click: ?a)[(if: $gift is not &quot;herbal digestion tea&quot;)[(set: $gift to &quot;herbal digestion tea&quot;)(set: $wallet to it - 10)]]
 
-Paisley hammer pants - 20 €
+[Paisley hammer pants - 20 €]&lt;b|
 These one-size pants, made from cheerful paisley-print thin cotton, have a crotch that hangs somewhere around the knees. You’ve seen lots of women (and a few men) wearing pants like this around Kreuzberg and Friedrichshain – they’re fine, as long as you aren’t in a hurry to get anywhere. These pants would not be a good gift for a short person on the go, as the crotch would hang closer to ankle-level, seriously impeding their movement.
+(click: ?b)[(if: $gift is not &quot;paisley hammer pants&quot;)[(set: $gift to &quot;paisley hammer pants&quot;)(set: $wallet to it - 20)]]
 
-Tie-dye maxi skirt - 20 €
-This skirt looks extremely comfortable. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a maxi skirt. The waist is elastic, but the length would look funny on a tall person.
+[Tie-dye maxi skirt - 20 €]&lt;c|
+This thin, filmy cotton skirt looks extremely comfortable, appropriate for anything from a trip to the farmer&#39;s market to... well, next week&#39;s trip to the farmer&#39;s market. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a so-called maxi skirt; it would be ankle-length on a short person, but awkwardly calf-length on a tall person.
+(click: ?c)[(if: $gift is not &quot;tie-dye maxi skirt&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(set: $wallet to it - 20)]]
 
 To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]] , and to the right you see some kind of (if: $seenR)[ [[cheesy bread-&gt;Ron]] ](else:)[ [[cheesy bread-&gt;Rahmbrot]] ]</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="530,379" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. Thank goodness this tiny cart, and its beanie-clad proprietor, haven’t invented some lily-gilding abomination like salted caramel chestnuts, honey mustard chestnuts, or spicy paprika chestnuts. The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
 
@@ -349,16 +374,18 @@ To your left, there&#39;s a (if: $seenJ)[ [[cosy-looking stand-&gt;Wool]]](else:
 
 [Phone case with a sparkly skull - 10 €]&lt;a|
 It doesn’t really seem like her style, and you can’t remember what model of phone she has, but it definitely is sparkly.
-(click: ?a)[(if: $gift is not &quot;Sparkly skull phone case&quot;)[(set: $gift to &quot;Sparkly skull phone case&quot;)(set: $wallet to it - 10)]]
+(click: ?a)[(if: $gift is not &quot;sparkly skull phone case&quot;)[(set: $gift to &quot;sparkly skull phone case&quot;)(set: $wallet to it - 10)]]
 
-Phone case with sparkly imitation hello kitty - 10 €
-Tacky doesn’t even begin to describe this. The box says that it is for a model of phone that you know was recalled years ago.
+[Phone case with sparkly Hello Kitty - 10 €]&lt;b|
+Actually, it says Halo Katty, but close enough. The sticker says that it is for a model of phone that you know was recalled years ago.
+(click: ?b)[(if: $gift is not &quot;Hello Kitty phone case&quot;)[(set: $gift to &quot;Hello Kitty phone case&quot;)(set: $wallet to it - 10)]]
 
-Phone case with sparkly logo of the Munich football team - 10 €
-While you instantly recognize the classic Bavarian blue-and-white checkered pattern, it’s doubtful that your mother-in-law would have any idea what it means.
+[FC Bayern München phone case - 10 €]&lt;c|
+Since your mother-in-law does not follow German soccer, the classic Bavarian blue-and-white checkered pattern is not going to mean much to her. (click: ?c)[(if: $gift is not &quot;Bayern München phone case&quot;)[(set: $gift to &quot;Bayern München phone case&quot;)(set: $wallet to it - 10)]]
 
-Fidget spinner - 3 €
-For when you need a few extra industrial-grade ball bearings that failed inspection.
+[Fidget spinner - 3 €]&lt;d|
+You don&#39;t understand these. But you gotta admit, this is a genius use for extra industrial-grade ball bearings that failed inspection.
+(click: ?d)[(if: $gift is not &quot;fidget spinner&quot;)[(set: $gift to &quot;fidget spinner&quot;)(set: $wallet to it - 3)]]
 
 To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]] ](else:)[ [[wood-fired oven-&gt;Ron]] ]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="522,24" size="100,100">(if: $showFooter is 1)[ (set: $spirit to it - 1)(set: $hunger to it + 1) (if: $hunger &gt; 10)[ (set: $spirit to it - 1) ]
 
@@ -366,7 +393,7 @@ Or, swing by the nearest (if: $seenG)[ [[Glühwein Vendor]] ](else:)[ [[Glühwei
 
 ](else-if: $showFooter is 2)[
 (set: $showFooter to 1)
-]</tw-passagedata><tw-passagedata pid="21" name="spirit" tags="header" position="381,400" size="100,100">(if: $showFooter is 1)[(if: $spirit &lt; -3)[
+]</tw-passagedata><tw-passagedata pid="21" name="spirit" tags="header" position="374,480" size="100,100">(if: $showFooter is 1)[(if: $spirit &lt; -3)[
 (set: $showFooter to 0)(go-to: &quot;Spirit-too-low&quot;)
 ](else-if: $spirit &lt; -1)[
 Your holiday spirit is dangerously low. Unless you increase it, you’re going to have to go home very soon.
@@ -447,7 +474,7 @@ As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love
 
 &lt;strong&gt;[[Weihnachtsmarkt Simulator-&gt;At the Office]]&lt;/strong&gt;
 
-&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata></tw-storydata>
+&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="your travels are almost over" tags="" position="284,282" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="last leg of your flight" tags="" position="524,261" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
