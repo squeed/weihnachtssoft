@@ -68,7 +68,9 @@ body {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -213,17 +215,7 @@ Jürgen got to know your dad back in high school: Jürgen did an exchange year i
 </tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set $showFooter to 0)
 You land at Newark Airport, where you only have a 45-minute layover – you knew this was stupid, but it was the cheapest flight. 
 
-{(if: $gift is &quot;none&quot;)[As soon as you walk off the jetway, you break into a jog. You really do have to get something for your mother-in-law, even if it&#39;s not perfect. As you&#39;re running through the terminal, you decide to duck into a newsstand to grab something, anything.
-
-|q&gt;[
-[Spiral fries - 2 €]&lt;a|
-Hot, salty, and greasy. A perfect complement to Glühwein.
-
-[Spiral sweet-potato fries - 4 €]&lt;b|
-They might be deep-fried, but at least they’re packed with beta carotene - that’s healthy, right?]
-
-(click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
-(click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
+(if: $gift is &quot;none&quot;)[As soon as you walk off the jetway, you break into a jog. You really do have to get something for your mother-in-law, even if it&#39;s not perfect. As you&#39;re running through the terminal, you decide to duck into a newsstand to grab something, anything.
 
 |q&gt;[[T-shirt that says &quot;Up Yours, I&#39;m from Newark&quot; - 20 €]&lt;a|
 They only have XXL shirts left. Oh well, she can wear it as a nightshirt. That&#39;s cool, right?
@@ -236,16 +228,15 @@ Overpriced pizza from Famous Famiglia&#39;s. Pepperoni.]
 
 (click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-whirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]]
 
 (click: ?b)[(replace: ?q)[(if: $gift is not &quot;Mets bobblehead&quot;)[(set: $gift to &quot;Mets bobblehead&quot;)(set: $wallet to it - 15)&quot;Good choice,&quot; says the cashier. &quot;Though last season was a rough one, eh? Wonder if they&#39;ll re-sign – &quot;
 He stops as you thrust your US credit card wordlessly into his face. He blinks, runs the card, and - thank god - it seems to work. &quot;Want me to wrap that up for you?&quot; asks the cashier. But you&#39;ve already grabbed the bobblehead and sprinted out of the store.
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over]].]]]
 
 (click: ?c)[(replace: ?c)[What are you thinking?! No, you cannot give your mother-in-law a slice of pizza. Be cool, buddy, you got this. There&#39;s gotta be something here you can buy her.]]
-
-]}
+]
 (else:) [As soon as you walk off the jetway, you sprint towards customs, beating most of the rest of the passengers. As you wait in line at customs, you touch the gift in your carry-on, grateful that you found something suitable at the Christmas market and don&#39;t have to buy your mother-in-law something last-minute at the airport. 
 
 Once you clear customs, you jog to your gate. Sweet, you still have five minutes to spare! You refill your water bottle in the bathroom, board the plane, buckle your seatbelt, and settle in for the [[last leg of your flight]].]</tw-passagedata><tw-passagedata pid="11" name="The Girls" tags="" position="869,366" size="100,100">(set: $showFooter to 2)
