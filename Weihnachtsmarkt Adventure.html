@@ -379,7 +379,65 @@ Your holiday spirit is very high. The lights and sounds are beginning to blur. Y
 You&#39;re really hungry now
 ](else-if: $hunger &gt; 7)[
 You are starting to get a bit hungry
-]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">(set: $showFooter to 0)(set: $showStatus to true)(set: $wallet to 50)(set: $spirit to 2)(set: $seenA to false)(set: $seenJ to false)(set: $seenR to false)(set: $seenF to false)(set: $seenG to false)(set $drinkSpirit to 4)(set: $gift to &quot;None&quot;)</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
+]]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">{
+(set: $showFooter to 0)
+(set: $showStatus to true)
+(set: $wallet to 50)
+(set: $spirit to 2)
+(set: $seenA to false)
+(set: $seenJ to false)
+(set: $seenR to false)
+(set: $seenF to false)
+(set: $seenG to false)
+(set: $drinkSpirit to 4)
+(set: $gift to &quot;none&quot;)
+
+&lt;!--
+We need to randomize the set of properties so that at least one
+of these is satisfiable. So, randomly assign all the vars, then pick an ideal gift and assign those:
+1 [blue wool hat: cold, blue]
+2 [green wool: cold, green]
+3 [purple wool: cold purple]
+4 [herb tea: cold healthy]
+5 [drinking chocolate: cold sweet]
+6 [hammer pants: warm tall]
+7 [maxi skirt: warm short]
+8 [chocolate nativity: religious sweet]
+--&gt;
+(set: $pColor to (either: &quot;purple&quot;, &quot;green&quot;, &quot;blue&quot;))
+(set: $pTemp to (either: &quot;warm&quot;, &quot;cold&quot;))
+(set: $pFood to (either: &quot;healthy&quot;, &quot;sweet&quot;))
+(set: $pSize to (either: &quot;tall&quot;, &quot;short&quot;))
+(set: $pRelig to (either: true, false))
+
+(set: $bGift to (random: 1, 8))
+(if: $bGift is 1)[
+	(set: $pColor to &quot;blue&quot;)
+	(set: $pTemp to &quot;cold&quot;)
+](else-if: $bGift is 2)[
+	(set: $pColor to &quot;green&quot;)
+	(set: $pTemp to &quot;cold&quot;)
+](else-if: $bGift is 3)[
+	(set: $pColor to &quot;purple&quot;)
+	(set: $pTemp to &quot;cold&quot;)
+](else-if: $bGift is 4)[
+	(set: $pFood to &quot;healthy&quot;)
+	(set: $pTemp to &quot;cold&quot;)
+](else-if: $bGift is 5)[
+	(set: $pFood to &quot;sweet&quot;)
+	(set: $pTemp to &quot;cold&quot;)
+](else-if: $bGift is 6)[
+	(set: $pSize to &quot;tall&quot;)
+	(set: $pTemp to &quot;warm&quot;)
+](else-if: $bGift is 7)[
+	(set: $pSize to &quot;short&quot;)
+	(set: $pTemp to &quot;warm&quot;)
+](else-if: $bGift is 8)[
+	(set: $pRelig to true)
+	(set: $pFood to &quot;sweet&quot;)
+]
+
+}</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="223,152" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="625,838" size="100,100">Very dear family and friends:
 
 As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love about life in Germany, but we particularly love the Weihnachtsmärkte, or Christmas markets. So this Christmas, we wanted to bring the Weihnachtsmarkt experience to you:
 
