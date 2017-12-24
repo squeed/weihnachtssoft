@@ -226,7 +226,7 @@ Your mother-in-law likes sports. Actually no, she hates sports. Agh, whatever. T
 [Slice of pizza - 5 €]&lt;c|
 Overpriced pizza from Famous Famiglia&#39;s. Pepperoni.]
 
-(click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-whirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
+(click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-shirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
 
 You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over-&gt;end]].]]]
 
@@ -465,8 +465,99 @@ As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love
 
 &lt;strong&gt;[[Weihnachtsmarkt Simulator-&gt;At the Office]]&lt;/strong&gt;
 
-&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="673,23" size="100,100">So, you made it! Christmas day!
-</tw-passagedata></tw-storydata>
+&lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="673,23" size="100,100">It’s two days later. You’ve recovered from your jet lag. Your family sits in the living room, ready to exchange gifts.
+
+You hand your mother-in-law a wrapped gift. “You brought me something all the way from Germany!” she says, gently peeling the wrapping paper off. 
+&lt;!-- calculate how much she likes it --&gt;
+
+(print: $gift).
+
+{
+(set: $joy to 0)
+(if: $pColor is in $gift)[
+	&lt;!-- we can cheat here - the color is in the gift name --&gt;
+	Her favorite color is (print: $color) and so is her gift! Great!
+	(set: $joy to it + 1)
+]
+
+(if: $pTemp is &quot;warm&quot;)[
+	(if: &quot;hammer&quot; is in $gift)[
+		The cool and breezy hammer pants are perfect for this warm climate.
+		(set: $joy to it + 1)
+	](else-if: &quot;skirt&quot; is in $gift)[
+		The cool and breezy skirt is perfect for this warm climate.
+		(set: $joy to it + 1)
+	]
+](else:)[
+	(if: &quot;alpaca&quot; is in $gift)[
+		Alpaca wool is always good in a cold climate.
+		(set: $joy to it + 1)
+	](else-if: &quot;herbal&quot; is in $gift)[
+		Herbal tea is always good in a cold climate.
+		(set: $joy to it + 1)
+	](else-if: &quot;drinking&quot; is in $gift)[
+		Hot chocolate always keeps you warm.
+		(set: $joy to it + 1)
+	]
+]
+
+(if: $pFood is &quot;healthy&quot;)[
+	(if: &quot;herbal&quot; is in $gift)[
+		Herbal tea - way healthier than the usual Christmas fare.
+		(set: $joy to it + 1)
+	]
+](else:)[
+	(if: &quot;drinking&quot; is in $gift)[
+		Chocolate - great for those with sweet tooths.
+		(set: $joy to it + 1)
+	](else-if: &quot;nativity&quot; is in $gift)[
+		Chocolate - great for those with sweet tooths.
+		(set: $joy to it + 1)
+	]
+]
+
+(if: $pSize is &quot;tall&quot;)[
+	(if: &quot;hammer&quot; is in $gift)[
+		The pants are the perfect size.
+		(set: $joy to it + 1)
+](else:)[
+	(if: &quot;skirt&quot; is in $gift)[
+		The skirt is the perfect size.
+		(set: $joy to it + 1)
+	]
+]
+
+(if: $pRelig)[
+	(if: &quot;nativity&quot; is in $gift)[
+		The Nativity fits right in with her other religious decorations.
+		(set: $joy to it + 1)
+	]
+]
+
+}
+
+(if: $joy is 0)[
+	She raises an eyebrow as she unwraps the (print: $gift).
+	
+	(if: &quot;bobblehead&quot; is in $gift)[“Well, that’s something,” she says. “Why don’t I make another pot of tea?” She sets the bobblehead on the coffee table and goes into the other room. The bobblehead’s head bobbles gently. You resolve – as usual – not to procrastinate with your Christmas shopping next year. ]
+	(else-if: &quot;newark&quot; is in $gift)[Your mother-in-law holds the shirt up, not quite sure what to say. You excuse yourself to go drop another shot of whiskey into your eggnog, and resolve yet again not to procrastinate with your Christmas shopping.]
+	(else-if: &quot;fidget&quot; is in $gift)[Your mother-in-law has never seen one of these before. One of your cousins demonstrates it for her. “That’s all it does?” she says. “Spins around? Interesting.” ]
+	(else-if: &quot;phone&quot; is in $gift)[“This is for my phone?” says your mother-in-law. “I’m not sure it’ll fit. I think I have a Samsung something. Why don’t you give this to someone else?”
+	
+	“Ooh, I’ll take it,” says your 12-year-old cousin. Good, everyone’s happy. Sort of.]
+	* * * * * * * * * * * * * *
+	Dude, not cool. You&#39;ve done a lousy job choosing a gift for your mother-in-law. [[Try again?-&gt;At the Office]]
+](else-if: $joy is 1)[
+	She smiles as she unwraps the (print: $gift). She seems to appreciate the thought. However,
+	
+	
+	
+	](else-if: $joy is 2)[
+	She beams with delight as she unwraps the (print: $gift). &quot;It&#39;s just perfect!&quot; she says. &quot;Exactly what I wanted! Thank you for being so thoughtful.&quot; She sets the (print: $gift) on the coffee table and gives you a big hug.
+		* * * * * * * * * * * * * *
+	Congratulations! You&#39;ve done a wonderful job choosing a gift for your mother-in-law. [[Try again?-&gt;At the Office]]
+	
+]</tw-passagedata><tw-passagedata pid="27" name="Try again?" tags="" position="673,129" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
