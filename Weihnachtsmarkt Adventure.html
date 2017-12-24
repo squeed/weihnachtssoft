@@ -126,9 +126,10 @@ Everywhere you look, stalls offer up their wares. From carved wood nutcrackers t
 
 When you’re done shopping, you can leave the Weihnachtsmarkt and go home. 
 
-You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[[[wool-&gt;Jürgen and Ulrike]]] goods to your right. Behind you is the [exit.]&lt;a|
+You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[[[wool-&gt;Jürgen and Ulrike]]] goods to your right. Behind you is the [exit.]&lt;a|{ 
 
-(click: ?a)[(set: $showFooter to 0)(goto: &quot;Newark Airport&quot;)]</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="98,510" size="100,100">You try to remember what your mother-in-law is like. {
+(click: ?a)[(set: $showFooter to 0)(goto: &quot;Newark Airport&quot;)]
+}</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="98,510" size="100,100">You try to remember what your mother-in-law is like. {
 (if: $MILnonreligious is true)[She&#39;s not really religious; best stay away from holiday things that are too Jesus-centered.]
 (if: $MILshort is true)[She&#39;s pretty short.]
 (if: $MILjewelry is true)[She likes jewelry.]
@@ -190,7 +191,7 @@ Hot, spiced juice. Feels briefly embarrassing to order, but lets you feel warm a
 
 Go (link: &quot;back to the market&quot;)[(goto: (history: )&#39;s last)]</tw-passagedata><tw-passagedata pid="8" name="Freddy" tags="person" position="1094,106" size="100,100">(set: $showFooter to 2)
 (set: $seenF to true)
-You see your friend Freddy leaning against a wall, hands in the pockets of her black duffle coat. Her enormous dog, Vanzetti, lies on her feet. He seems to be sleeping despite the commotion. 
+On the way, you see your friend Freddy leaning against a wall, hands in the pockets of her black duffle coat. Her enormous dog, Vanzetti, lies on her feet. He seems to be sleeping despite the commotion. 
 
 Frankly, you&#39;re surprised to see Freddy at the Weihnachtsmarkt. Usually you run into her at demonstrations and soli-parties. She’s not drinking anything. She’s not buying anything. Is she waiting for someone? Is a protest about to happen, or something? You’re not about to ask. If she feels like telling you what she’s doing here, she will.
 
@@ -263,7 +264,8 @@ Once you clear customs, you jog to your gate. Sweet, you still have five minutes
 
 “Hiiiiiiiiiiiiiiiiiiiii!” You’ve walked straight into an ambush. Line, Lena, Anna, and Laura, four colleagues from your office, enfold you in a group hug, all fuzzy scarves and braids. Their cheeks are already extremely rosy.
 
-“I bought an extra by mistake! Here, take it!” Line presses a mug of Glühwein into your hands. You gratefully accept it and reach for your wallet. “No no, I’m inviting you. You pay for the next round,” says Line. The five of you clink mugs, carefully meeting each other’s eyes as the mugs touch, and you take a careful sip. Hoo boy, it seems Line ordered her Glühwein “mit Schuss,” or with an extra shot. (set: $spirit to it + 4)
+“I bought an extra by mistake! Here, take it!” Line presses a mug of Glühwein into your hands. You gratefully accept it and reach for your wallet. “No no, I’m inviting you. You pay for the next round,” says Line. The five of you clink mugs, carefully meeting each other’s eyes as the mugs touch, and you take a careful sip. Hoo boy, it seems Line ordered her Glühwein “mit Schuss,” or with an extra shot. 
+(link-reveal: &quot;Bottoms up!&quot;) [(set: $spirit to it + 4)
 
 “I can’t drink too much,” you say. “I have to somehow find a present for my mother-in-law. I’m flying to see her tomorrow, and I don’t have anything for her. I really want to find her something that doesn’t suck.”
 “Tja,” says Laura. “Last year, I bought my mother-in-law a yoga mat, but it turned out she was allergic to the chemicals in it.”
@@ -284,11 +286,12 @@ Once you clear customs, you jog to your gate. Sweet, you still have five minutes
 
 (click: ?yes)[(replace: ?q)[(set: $spirit to it + 4)“Heck yeah,” you say, “and this time, Line, I’m buying yours.” As you clink glasses, exchange glances, and take your first sip, you realize that you forget to tell her that you actually wanted your Glühwein without an extra shot. Tomorrow is going to be interesting.
 
-The conversation turns to work, or rather, to the other people in the office. Anna is trying to figure out how to subtly work out whether or not the new accountant is single. Lena thinks she’s about to get promoted (you know she’s wrong, but you’re not going to tell her). Laura’s boss is apparently talking shit about Line’s boss. You decide to leave before you learn any gossip you’re going to regret knowing.]]
+The conversation turns to work, or rather, to the other people in the office. Anna is trying to figure out how to subtly work out whether or not the new accountant is single. Lena thinks she’s about to get promoted (you know she’s wrong, but you’re not going to tell her). Laura’s boss is apparently talking shit about Line’s boss. You decide to leave before you learn any gossip you’re going to regret knowing.
 
-(click: ?no)[(replace: ?q)[“I really can’t,” you say. “Battling a Kater on a 7-hour flight is not my idea of a good way to start the holidays.” You hug everyone goodbye, wish them a “Guten Rutsch” into the new year, and head off.]]
+(link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].]]
 
-(link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,511" size="100,100">Mmmm. Chocolate. 
+(click: ?no)[(replace: ?q)[“I really can’t,” you say. “Battling a Kater on a 7-hour flight is not my idea of a good way to start the holidays.” You hug everyone goodbye, wish them a “Guten Rutsch” into the new year, and head off.
+(link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].]]]</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,511" size="100,100">Mmmm. Chocolate. 
 
 Not content at merely dominating the export market with quality industrial products, it seems that the Germans also excel at making chocolate versions of the things they already make. (Maybe they repurpose the injection molds?) Chocolate immersion blenders, chocolate wrenches and cordless drills, chocolate disk brake calipers, and chocolate insurance contracts lay before you, just to name a few things.
 
@@ -312,7 +315,7 @@ The baker starts to cut off a piece on the end. You politely ask for a middle pi
 
 You thank the vendor, your hands full of greasy deliciousness, and tuck in, already wishing you’d worn roomier pants.]
 
-To your right is the [[faint scent of patchouli-&gt;Hippie Stuff]], and to your left is an oddly (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="14" name="Wool" tags="" position="977,510" size="100,100">This stall, which boasts all manner of alpaca-related goods, is nothing if not cozy. The counter is piled with hats and mittens, while scarves and blankets cascade from the ceiling. The proprietor, ironically, seems to be immune to the cold, and is counting money in a t-shirt and jeans.
+To your left is an oddly (if: $seenF)[[[empty tent-&gt;Ali Express]] ](else:)[[[empty tent-&gt;Freddy]]], and to your right is the [[faint scent of patchouli-&gt;Hippie Stuff]].</tw-passagedata><tw-passagedata pid="14" name="Wool" tags="" position="977,510" size="100,100">This stall, which boasts all manner of alpaca-related goods, is nothing if not cozy. The counter is piled with hats and mittens, while scarves and blankets cascade from the ceiling. The proprietor, ironically, seems to be immune to the cold, and is counting money in a t-shirt and jeans.
 
 [Blue alpaca-wool hat]&lt;a|
 This fluffy hat with earflaps and a jaunty pompom will keep your ears toasty. It’s a flattering shade of royal blue.
@@ -326,7 +329,7 @@ Rule number one of German homes: always swap your street shoes at the door for a
 This knitted tube is the opposite of a crop top: it covers you from mid-back to mid-butt in order to keep your kidneys from getting chilly. Your German friends tell you that cold kidneys are very bad for you. As a gift, this will take some explanation, but maybe your mother-in-law would appreciate your concern for her kidneys.
 (click: ?c)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;purple alpaca kidney warmer&quot;)(display:&quot;Replacement Confirmation&quot;)](if: $gift is not &quot;purple alpaca kidney warmer&quot;)[(set: $gift to &quot;purple alpaca kidney warmer&quot;)(set: $wallet to it - 30)(display: &quot;Bought Confirmation&quot;) ]]
 
-There seems to be some kind of [[fried food-&gt;Pommes]] to your right, and [[the entrance-&gt;Market entrance]] to your left.</tw-passagedata><tw-passagedata pid="15" name="Hippie Stuff" tags="" position="655,240" size="100,100">The Weihnachtsmarkt mostly smells of cinnamon and warm wine. But as you approach this stall, you get a massive whiff of patchouli. 
+To your left is [[the entrance-&gt;Market entrance]], and to your right is some [[fried food-&gt;Pommes]].</tw-passagedata><tw-passagedata pid="15" name="Hippie Stuff" tags="" position="655,240" size="100,100">The Weihnachtsmarkt mostly smells of cinnamon and warm wine. But as you approach this stall, you get a massive whiff of patchouli. 
 
 [“Verdauungshilfe” herb tea infusion]&lt;a|
 This mixture of flower petals and leaves comes in an attractive tin, tied with a raffia bow, and it’s supposed to aid digestion. Tea is always nice on a chilly winter day, and good digestion never goes out of style. You ask the proprietor how it tastes. “It’s very healthy,” she replies.
@@ -340,7 +343,7 @@ These one-size pants, made from cheerful paisley-print thin cotton, have a crotc
 This thin, filmy cotton skirt looks extremely comfortable, appropriate for anything from a trip to the farmer&#39;s market to... well, next week&#39;s trip to the farmer&#39;s market. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a so-called maxi skirt; it would be ankle-length on a short person, but awkwardly calf-length on a tall person.
 (click: ?c)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(display:&quot;Replacement Confirmation&quot;)](else-if: $gift is not &quot;tie-dye maxi skirt&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(set: $wallet to it - 20)(display: &quot;Bought Confirmation&quot;)]]
 
-To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]] , and to the right you see some kind of (if: $seenR)[ [[cheesy bread-&gt;Ron]] ](else:)[ [[cheesy bread-&gt;Rahmbrot]] ]</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="488,385" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. Thank goodness this tiny cart, and its beanie-clad proprietor, haven’t invented some lily-gilding abomination like salted caramel chestnuts, honey mustard chestnuts, or spicy paprika chestnuts. The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
+To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]], and to the right you see some kind of (if: $seenR)[[[cheesy bread-&gt;Ron]]](else:)[[[cheesy bread-&gt;Rahmbrot]]].</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="488,385" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. Thank goodness this tiny cart, and its beanie-clad proprietor, haven’t invented some lily-gilding abomination like salted caramel chestnuts, honey mustard chestnuts, or spicy paprika chestnuts. The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
 
 [100g roasted chestnuts]&lt;a|
 
@@ -348,7 +351,7 @@ To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]] , and to the ri
 
 You squeeze open a charred, piping-hot husk and bite into the nut’s tender inside. Classic! Though you have to admit, roasted chestnuts always smell better than they taste. You drop the husk back in the paper cone and devour the rest of your nutty bounty.]
 
-To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to the right there&#39;s a (if: $seenA)[ [[chocolate stand.-&gt;Chocolate]]](else:)[ [[chocolate stand.-&gt;Alessandro]]]</tw-passagedata><tw-passagedata pid="17" name="Ron" tags="" position="803,76" size="100,100">(set: $showFooter to 2)
+To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to the right there&#39;s a (if: $seenA)[[[chocolate stand.-&gt;Chocolate]]](else:)[[[chocolate stand.-&gt;Alessandro]]].</tw-passagedata><tw-passagedata pid="17" name="Ron" tags="" position="803,76" size="100,100">(set: $showFooter to 2)
 (set: $seenR to true)
 “Maaaaaaaaaaate!” comes a voice from behind you. 
 
@@ -385,7 +388,7 @@ They might be deep-fried, but at least they’re packed with beta carotene - tha
 (click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
 (click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
 
-To your left, there&#39;s a (if: $seenJ)[ [[cosy-looking stand-&gt;Wool]]](else:)[ [[cosy-looking stand-&gt;Jürgen and Ulrike]] ], and to your right, there seems to be an (if: $seenF)[ [[empty tent-&gt;Ali Express]] ](else:)[ [[empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
+To your left, there&#39;s a (if: $seenJ)[[[cosy-looking stand-&gt;Wool]]](else:)[[[cosy-looking stand-&gt;Jürgen and Ulrike]] ], and to your right, there seems to be an (if: $seenF)[[[empty tent-&gt;Ali Express]]](else:)[[[empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
 
 [Phone case with a sparkly skull]&lt;a|
 It doesn’t really seem like her style, and you can’t remember what model of phone she has, but it definitely is sparkly.
@@ -402,7 +405,7 @@ Since your mother-in-law does not follow German soccer, the classic Bavarian blu
 You don&#39;t understand these. But you gotta admit, this is a genius use for extra industrial-grade ball bearings that failed inspection.
 (click: ?d)[(if: $gift is not &quot;fidget spinner&quot;)[(set: $gift to &quot;fidget spinner&quot;)(set: $wallet to it - 3)(display: &quot;Bought Confirmation&quot;)]]
 
-To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[ [[ wood-fired oven-&gt;Rahmbrot]].](else:)[ [[wood-fired oven-&gt;Ron]].]</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="445,248" size="100,100"> {
+To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to your right, you see the glow of a (if: $seenR)[[[ wood-fired oven-&gt;Rahmbrot]]](else:)[[[wood-fired oven-&gt;Ron]]].</tw-passagedata><tw-passagedata pid="20" name="Footer" tags="footer" position="445,248" size="100,100"> {
 (if: $showFooter is 1)[ 
 	(set: $spirit to it - 1)
 	(set: $hunger to it + 1) 
