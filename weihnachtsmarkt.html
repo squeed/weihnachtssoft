@@ -80,7 +80,7 @@ body {
 		font-weight: 700;
 		border-radius: 4px;
 	}
-	.alert.spirit-alert {
+	.alert.spirit-alert, .alert.hunger-alert {
 		background-color: rgba(255,50,50,.4);
 		margin: .2em 0;
 		padding: .3em .8em;
@@ -162,11 +162,9 @@ The train pulls up to the station. The voices around you grow more enthusiastic,
 
 You’re surrounded by happy people. There are groups of colleagues celebrating the day&#39;s end, friends meeting up before a night out, and tourists taking selfies. You can already smell the hot spiced wine.
 
-Everywhere you look, stalls offer up their wares. From carved wood nutcrackers to softly lit paper stars, blown glass ornaments to silver candelabras, there’s a gift for everyone on your list. That reminds you of the reason you’re here: you really need a present for your mother-in-law. You’ve already given her most of the Weihnachtsmarkt basics, so this year you’ll have to find something new for her.
+Everywhere you look, stalls offer up their wares, from carved wood nutcrackers to softly lit paper stars, blown glass ornaments to silver candelabras. Unfortunately, you’ve already given your mother-in-law most of the Weihnachtsmarkt basics. This year you’ll have to find something that's a bit more tailored to her preferences.
 
-When you’re done shopping, you can leave the Weihnachtsmarkt and go home. 
-
-You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[[[wool-&gt;Jürgen and Ulrike]]] goods to your right. Behind you is the [exit.]&lt;a|{ 
+You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Chocolate]] ](else:)[ [[chocolate-&gt;Alessandro]] ] to your left, and some (if: $seenJ)[ [[wool-&gt;Wool]]](else:)[[[wool-&gt;Jürgen and Ulrike]]] goods to your right. When you're done shopping, head for the [exit.]&lt;a|{ 
 
 (click: ?a)[(set: $showFooter to 0)(goto: &quot;Newark Airport&quot;)]
 }</tw-passagedata><tw-passagedata pid="5" name="mother-in-law" tags="" position="98,510" size="100,100">You try to remember what your mother-in-law is like. {
@@ -356,7 +354,7 @@ One slice of creamy, hamtastic flatbread.]&lt;b|
 (click: ?q)[(replace: ?b)[(set: $wallet to $it - 3)(set: $hunger to 0)
 The baker starts to cut off a piece on the end. You politely ask for a middle piece. The baker sighs and slides a middle piece onto a square of white cardboard.
 
-You thank the vendor, your hands full of greasy deliciousness, and tuck in, already wishing you’d worn roomier pants.]]
+You tuck in, already wishing you’d worn roomier pants. This Rahmbrot will keep your holiday spirit from sinking too quickly as you walk around the market.]]
 
 To your left is an oddly (if: $seenF)[[[empty tent-&gt;Ali Express]] ](else:)[[[empty tent-&gt;Freddy]]], and to your right is the [[faint scent of patchouli-&gt;Hippie Stuff]].</tw-passagedata><tw-passagedata pid="14" name="Wool" tags="" position="977,510" size="100,100">This stall, which boasts all manner of alpaca-related goods, is nothing if not cozy. The counter is piled with hats and mittens, while scarves and blankets cascade from the ceiling. The proprietor, ironically, seems to be immune to the cold, and is counting money in a t-shirt and jeans.
 
@@ -395,7 +393,9 @@ Small paper cone containing approximately 10 chestnuts.]&lt;b|
 
 (click: ?a)[(replace: ?b)[(set: $wallet to it - 2)(set: $hunger to 0)The vendor scrapes a spatula full of chestnuts into a paper cone. As he hands it to you, you can feel the warm chestnuts through the paper. 
 
-You squeeze open a charred, piping-hot husk and bite into the nut’s tender inside. Classic! Though you have to admit, roasted chestnuts always smell better than they taste. You drop the husk back in the paper cone and devour the rest of your nutty bounty.]]
+You squeeze open a charred, piping-hot husk and bite into the nut’s tender inside. Classic! Though you have to admit, roasted chestnuts always smell better than they taste. 
+
+These chestnuts will temporarily keep your holiday spirit from sinking too quickly as you walk around the market.]]
 
 To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to the right there&#39;s a (if: $seenA)[[[chocolate stand-&gt;Chocolate]]](else:)[[[chocolate stand-&gt;Alessandro]]].</tw-passagedata><tw-passagedata pid="17" name="Ron" tags="" position="803,76" size="100,100">(set: $showFooter to 2)
 (set: $seenR to true)
@@ -437,8 +437,12 @@ The perfect potato chip: hot, salty, and greasy.
 [Spiral sweet-potato fries]&lt;b|
 They might be deep-fried, but at least they’re packed with beta carotene. That’s healthy, right?]
 
-(click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them.]]
-(click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them.]]
+(click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them. 
+
+These chips will keep your holiday spirit from sinking too quickly as you walk around the market.]]
+(click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them.
+
+These chips will keep your holiday spirit from sinking too quickly as you walk around the market.]]
 
 To your left, there&#39;s a (if: $seenJ)[[[stand selling wool goods-&gt;Wool]]](else:)[[[stand selling wool goods-&gt;Jürgen and Ulrike]]], and to your right, there seems to be an (if: $seenF)[[[almost-empty tent-&gt;Ali Express]]](else:)[[[almost-empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">This bare-bones tent isn&#39;t even trying. It&#39;s probably just as well, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or various Heritage Days. 
 
@@ -488,7 +492,7 @@ To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to
 &lt;div class=&quot;alert spirit-alert&quot;&gt;Your holiday spirit is high. The lights and sounds are beginning to blur. You feel fabulous, but you’re losing your focus. Better not drink much more, or you’re going to have to go home.&lt;/div&gt;]]]
 (if: $hunger &gt; 10)[&lt;div class=&quot;alert hunger-alert&quot;&gt;
 You&#39;re really hungry now, and your holiday spirit is fading fast.&lt;/div&gt;
-](else-if: $hunger &gt; 7)[&lt;div class=&quot;alert hunger-alert&quot;&gt;
+](else-if: $hunger &gt; 6)[&lt;div class=&quot;alert hunger-alert&quot;&gt;
 You are starting to get a bit hungry. It&#39;s hard to keep up your holiday spirit when your stomach is rumbling.&lt;/div&gt;
 ]</tw-passagedata><tw-passagedata pid="22" name="var-init" tags="startup" position="350,680" size="100,100">{
 (set: $showFooter to 0)
