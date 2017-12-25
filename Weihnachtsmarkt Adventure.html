@@ -74,7 +74,9 @@ body {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -93,7 +95,7 @@ You look out the window from your desk. It&#39;s 4.00pm, and it&#39;s dark alrea
 
 But at least December isn&#39;t so bad, because of the Christmas markets. They&#39;re one of your favorite things about winter in Germany. The lights, the Glühwein, the carols – they cheer you up no matter what.
 
-It&#39;s a Tuesday afternoon in mid-December, your last day of work before winter vacation. You&#39;re all packed, but you remembered – just in time! – that you still need to find a Christmas present for your mother-in-law. 
+It&#39;s a Tuesday afternoon in mid-December, your last day of work before winter vacation. You&#39;re all packed, but you remembered – just in time! – that (link-reveal: &quot;you still need to find a Christmas present for your mother-in-law.&quot;)[ 
 
 Weihnachtsmärkte to the rescue! You&#39;re sure to find something nice for her. And, bonus, you can probably grab a glass or three of Glühwein, and you might run into a few friends. 
 
@@ -110,8 +112,8 @@ A colleague is leaving at the same time. &quot;Hey, let&#39;s grab a Feierabendb
 (click: ?noBeer)[(replace: ?q)[Why drink on the way to drinks? Plus, the only beer here is Beck&#39;s. $ubahn]]
 
 
-(set: $ubahn to &quot;You walk through the gloomy evening towards the nearest [[U-Bahn]].&quot;)
-</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="138,326" size="100,100">Current Gift: $gift &amp;vellip; Holiday Spirit: (if: $spirit &lt; -1)[Dangerously Low](else-if: $spirit &lt; 0)[Low](else-if: $spirit &gt; 6)[Dangerously High](else-if: $spirit &gt; 4)[High](else:)[Normal]</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="965,773" size="100,100">As the U-Bahn rumbles through the city, your thoughts turn to your mother-in-law. You want to get her something she&#39;ll treasure.
+(set: $ubahn to &quot;You walk through the gloomy evening towards the nearest [[U-Bahn]].&quot;)]
+</tw-passagedata><tw-passagedata pid="2" name="Header" tags="header" position="138,326" size="100,100">(live: .25s)[Current gift: $gift &amp;vellip; Holiday spirit: (if: $spirit &lt; -1)[dangerously low](else-if: $spirit &lt; 0)[low](else-if: $spirit &gt; 6)[dangerously high](else-if: $spirit &gt; 4)[high](else:)[normal]]</tw-passagedata><tw-passagedata pid="3" name="U-Bahn" tags="" position="965,773" size="100,100">As the U-Bahn rumbles through the city, your thoughts turn to your mother-in-law. You want to get her something she&#39;ll treasure.
 
 ... Jeez. This is embarrassing. You suddenly realize that you don’t remember much about her. Buying a present for her might be a challenge. Hopefully you’ll remember more as you wander through the Weihnachtsmarkt.
 
@@ -137,13 +139,15 @@ You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Choco
 (if: $MILgerman is true)[She doesn&#39;t know how to read German.]
 (else:)[Uhhh... jeez, this is embarrassing. You really can&#39;t remember very much about her at all. Buying a present for her might be difficult.]}</tw-passagedata><tw-passagedata pid="6" name="Alessandro" tags="" position="513,607" size="100,100">(set: $showFooter to 2)
 (set: $seenA to true)
-On the way, you see your friend Alessandro.
+Hey, it&#39;s your friend Alessandro!
 
-You’ve seen Alessandro at more than a few tech-related meetups, though his real passion is music: he once gave a talk about some open-source music software that you enjoyed discussing over beers afterwards. He’s a smart guy, and nice to boot; obviously, his date thinks so too. They’re leaning towards each other, hands clasped around mugs of Glühwein. 
+You’ve seen Alessandro at more than a few tech-related meetups, though his real passion is music: he once gave a talk about some open-source music software. 
+
+He’s a smart guy, and nice to boot; obviously, his date thinks so too. They’re leaning towards each other, hands clasped around mugs of Glühwein. 
 
 You probably shouldn’t interrupt, but you really do want to say hi. “Hey, Alessandro! How was your set last week at Krankenmaul?” 
 
-“Hey!” he says. “It was a good time. We did start a couple of hours late, because the guy before me had to repatch his entire modular rack. Oh, by the way, this is David.” Alessandro’s date is skinny and blonde, with neon orange plastic glasses frames. “He’s a musician, too.”
+“Oh, hey there!” he says. “It was a good time. We did start a couple of hours late, because the guy before me had to repatch his entire modular rack. Oh, by the way, this is David.” Alessandro’s date is skinny and blonde, with neon orange plastic glasses frames. “He’s a musician, too.”
 
 “What kind of music do you do?” you ask David.
 
@@ -193,11 +197,13 @@ Go (link: &quot;back to the market&quot;)[(goto: (history: )&#39;s last)]</tw-pa
 (set: $seenF to true)
 On the way, you see your friend Freddy leaning against a wall, hands in the pockets of her black duffle coat. Her enormous dog, Vanzetti, lies on her feet. He seems to be sleeping despite the commotion. 
 
-Frankly, you&#39;re surprised to see Freddy at the Weihnachtsmarkt. Usually you run into her at demonstrations and soli-parties. She’s not drinking anything. She’s not buying anything. Is she waiting for someone? Is a protest about to happen, or something? You’re not about to ask. If she feels like telling you what she’s doing here, she will.
+Frankly, you&#39;re surprised to see Freddy at the Weihnachtsmarkt. Usually you run into her at demonstrations and soli-parties. She’s not drinking anything. She’s not buying anything. Is she waiting for someone? Is a protest about to happen? You’re not going to ask. If she feels like telling you what she’s doing here, she will.
 
 “Hey,” you say.
+
 “Hey,” she replies. You can never tell if she’s glad to see you or not.
 “Did you make it to Acki 22 last weekend?”
+
 “Nah. I couldn’t hitch back from Sofia in time. Bulgarian cops are nasty.”
 
 Vanzetti sighs deeply and rearranges himself on Freddy’s boots. Freddy pulls a plastic bag of tobacco from her jacket pocket and starts to roll a cigarette without even looking at her hands.
@@ -206,11 +212,15 @@ Vanzetti sighs deeply and rearranges himself on Freddy’s boots. Freddy pulls a
 
 Vanzetti lifts his head, then puts it back down with a groan.
 
-&quot;I&#39;m looking for something for my mother-in-law,&quot; you say. “I have no idea what to get her.” “Oh, right, you’re married,” says Freddy expressionlessly.
+&quot;I&#39;m looking for something for my mother-in-law,&quot; you say. “I have no idea what to get her.” 
 
-And then, after a brief pause, “That time that Aphid stayed up for 4 days and painted the whole basement $pColor. You said your mother-in-law would love it.” She lights her cigarette, fishes an old flip-phone out of one of her pockets, and starts furiously typing.
+“Oh, right, you’re married,” says Freddy expressionlessly.
 
-“Well. See you around,&quot; you say. You reach down and scratch Vanzetti between the ears – you can’t resist. He thumps his tail feebly, and you [[make your way back-&gt;Ali Express]] into the bustle of the markets.
+And then, after a brief pause, “Remember that time that Aphid stayed up for 4 days and painted the whole basement $pColor? You said your mother-in-law would love it.” She lights her cigarette, fishes an old flip-phone out of one of her pockets, and starts furiously typing.
+
+“Well. See you around,&quot; you say. 
+
+You reach down and scratch Vanzetti between the ears – you can’t resist. He thumps his tail feebly, and you [[make your way back-&gt;Ali Express]] into the bustle of the market.
 </tw-passagedata><tw-passagedata pid="9" name="Jürgen and Ulrike" tags="person" position="1087,626" size="100,100">(set: $showFooter to 2)
 (set: $seenJ to true)
 Just in front of the store, you spot Jürgen and Ulrike: a huge man with tiny glasses and a tiny woman with huge glasses. They are well-prepared for the cold, wearing hiking boots, wool socks pulled up over their jeans, and matching red Jack Wolfskin jackets.
@@ -231,7 +241,7 @@ Jürgen got to know your dad back in high school: Jürgen did an exchange year i
 (else-if: $pTemp is &quot;warm&quot;)[&quot;At least you are going somewhere warm,&quot; says Ulrike. &quot;We need to get out of this cold, too. We are excited for our trip to Mallorca over New Years. Anyway, do give our best wishes to your father, when you see him.&quot;]
 
 &quot;Of course I&#39;ll say hi to him for you, and you two have a lovely trip,&quot; you say. &quot;Don&#39;t forget your sunscreen!&quot; The three of you laugh, exchange another hug, and [[part ways-&gt;Wool]].
-</tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set: $showFooter to 0)
+</tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set: $showFooter to 0)(set: $spirit to 2)
 
 It&#39;s the next day. You successfully got on the plane at Tegel and landed, seven hours later, at Newark Airport, where you only have a 45-minute layover. You knew this was a bit stupid, but it was the cheapest flight. 
 
@@ -264,16 +274,21 @@ Once you clear customs, you jog to your gate. Sweet, you still have five minutes
 
 “Hiiiiiiiiiiiiiiiiiiiii!” You’ve walked straight into an ambush. Line, Lena, Anna, and Laura, four colleagues from your office, enfold you in a group hug, all fuzzy scarves and braids. Their cheeks are already extremely rosy.
 
-“I bought an extra by mistake! Here, take it!” Line presses a mug of Glühwein into your hands. You gratefully accept it and reach for your wallet. “No no, I’m inviting you. You pay for the next round,” says Line. The five of you clink mugs, carefully meeting each other’s eyes as the mugs touch, and you take a careful sip. Hoo boy, it seems Line ordered her Glühwein “mit Schuss,” or with an extra shot. 
-(link-reveal: &quot;Bottoms up!&quot;) [(set: $spirit to it + 4)
+“I bought an extra by mistake! Here, take it!” Line presses a mug of Glühwein into your hands. You gratefully accept it and reach for your wallet. “No no, I’m inviting you. You pay for the next round,” says Line. 
 
-“I can’t drink too much,” you say. “I have to somehow find a present for my mother-in-law. I’m flying to see her tomorrow, and I don’t have anything for her. I really want to find her something that doesn’t suck.”
+The five of you clink mugs, carefully meeting each other’s eyes as the mugs touch, and you take a careful sip. Hoo boy, it seems Line ordered her Glühwein “mit Schuss,” or with an extra shot. 
+(link: &quot;Bottoms up!&quot;) [(set: $spirit to it + 4)
+
+You take a big gulp of Glühwein and explain your situation to the girls. “I have to somehow find a present for my mother-in-law. I’m flying to see her tomorrow, and I don’t have anything for her. I really want to find her something that doesn’t suck.”
+
 “Tja,” says Laura. “Last year, I bought my mother-in-law a yoga mat, but it turned out she was allergic to the chemicals in it.”
+
 “Oje,” says Anna. “One time, I bought my mother-in-law a bathrobe, but then I learned that she likes to walk around the house naked.” 
+
 “Yeah, see,” you say, “I really don’t want to make that kind of mistake.”
 {
 (if: $pFood is &quot;sweet&quot;)[
-	Lena thinks a moment. “You said that delicious chocolate fudge you brought to work was from your mother-in-law’s recipe. So she must have a – how do you call it? A sweet tooth. There are plenty of sweet things here.”
+	Lena thinks a moment. “You said that delicious chocolate fudge you brought to work was from your mother-in-law’s recipe. So she must have a sweet tooth. You&#39;ll find plenty of sweet things here.”
 ](else:)[
 	Lena thinks a moment. “Well, she’s vegan, right? You said that quinoa, tofu, and avocado salad you brought to our potluck was from your mother-in-law’s recipe, and that she was really good at healthy cooking. Just avoid all the candy and chocolate, and you’ll be fine.”
 ]
@@ -286,7 +301,7 @@ Once you clear customs, you jog to your gate. Sweet, you still have five minutes
 
 (click: ?yes)[(replace: ?q)[(set: $spirit to it + 4)“Heck yeah,” you say, “and this time, Line, I’m buying yours.” As you clink glasses, exchange glances, and take your first sip, you realize that you forget to tell her that you actually wanted your Glühwein without an extra shot. Tomorrow is going to be interesting.
 
-The conversation turns to work, or rather, to the other people in the office. Anna is trying to figure out how to subtly work out whether or not the new accountant is single. Lena thinks she’s about to get promoted (you know she’s wrong, but you’re not going to tell her). Laura’s boss is apparently talking shit about Line’s boss. You decide to leave before you learn any gossip you’re going to regret knowing.
+The conversation turns to work, or rather, to the other people in the office. Line thinks she&#39;s underpaid. Laura hates her boss and wants a transfer. Anna is trying to figure out whether or not the new accountant is single. You decide to leave before you learn any gossip you’re going to regret knowing.
 
 (link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].]]
 
@@ -310,6 +325,7 @@ To the left you see some kind of [[roasted nuts-&gt;Chestnuts]], and to the righ
 This flat bread topped with cream, ham, and green onions is supposedly a medieval peasant&#39;s snack. The pants of these medieval peasants must have been roomy.
 
 |q&gt;[Rahmbrot]
+One slice of creamy, hamtastic flatbread.
 (click-replace: ?q)[(set: $wallet to $it - 3)(set: $hunger to 0)
 The baker starts to cut off a piece on the end. You politely ask for a middle piece. The baker sighs and slides a middle piece onto a square of white cardboard.
 
@@ -343,9 +359,13 @@ These one-size pants, made from cheerful paisley-print thin cotton, have a crotc
 This thin, filmy cotton skirt looks extremely comfortable, appropriate for anything from a trip to the farmer&#39;s market to... well, next week&#39;s trip to the farmer&#39;s market. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a so-called maxi skirt; it would be ankle-length on a short person, but awkwardly calf-length on a tall person.
 (click: ?c)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(display:&quot;Replacement Confirmation&quot;)](else-if: $gift is not &quot;tie-dye maxi skirt&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(set: $wallet to it - 20)(display: &quot;Bought Confirmation&quot;)]]
 
-To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]], and to the right you see some kind of (if: $seenR)[[[cheesy bread-&gt;Ron]]](else:)[[[cheesy bread-&gt;Rahmbrot]]].</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="488,385" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. Thank goodness this tiny cart, and its beanie-clad proprietor, haven’t invented some lily-gilding abomination like salted caramel chestnuts, honey mustard chestnuts, or spicy paprika chestnuts. The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
+To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]], and to the right you see some kind of (if: $seenR)[[[cheesy bread-&gt;Ron]]](else:)[[[cheesy bread-&gt;Rahmbrot]]].</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="488,385" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. 
+
+The chestnut man slowly rakes raw chestnuts around a metal grate, the hot coals underneath roasting their outer skins to crispy perfection. He sings some vaguely Italian-sounding song, but it becomes quickly clear that he doesn’t know a word of Italian. He greets you warmly as you walk up to the stand.
 
 [100g roasted chestnuts]&lt;a|
+Small paper cone containing approximately 10 chestnuts.
+
 
 (click-replace: ?a)[(set: $wallet to it - 2)(set: $hunger to 0)The vendor scrapes a spatula full of chestnuts into a paper cone. As he hands it to you, you can feel the warm chestnuts through the paper. 
 
@@ -358,37 +378,43 @@ To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to th
 (Why are there sunglasses on Ron’s head? Not only is it night, you haven’t seen more than 5 minutes of sun for at least a week.)
 
 “Ron, buddy! Good to see you!” You exchange back slaps. “How’s the consultancy been?” You have known Ron for two years, follow him on every social media platform, and still have no idea what his consultancy does.
+
 “Business? Booming. Business is booming. Tons of clients, tons of meetings, phone’s just always blowing up. Clients, they all want something before the end of the year, you know? Got me working like a dog. Glad to finally catch a break.” 
+
 “What are you doing for the holidays?” you ask.
+
 “Oh just heading to Corsica. Bunch of friends have a place there. Then we thought we’d head to Goa, hang out, see the beach, just chill. After that we’re gonna go to Phuket. You know, get a little sun, just relax, take it easy. I’ll be back in April. Good times. Yourself?”
+
 “Spending the holidays with my in-laws,” you say. “Doesn’t sound quite as instagrammable as your trip. But hey, I’m excited to see them. Or rather, I will be once I figure out what to get for my mother-in-law.”
 
-[if tall]
-“Now, that’s the really tall lady, right?”
-[if short]
-“Now, that’s the really short lady, right?”
+(if: $pSize is &quot;tall&quot;)[“Now, that’s the really tall lady, right?”]
+(if: $pSize is &quot;short&quot;)[“Now, that’s the really short lady, right?”]
 
 “Um, yeah.” You blink. “How do you know?”
+
 “You instagrammed that whole trip to Provence, mate.”
+
 “Oh. True.” That’s right – Ron faves everything you post. You didn’t think he actually looked at the pictures, though. You thought he’d programmed a bot that took care of that.
+
 “Anyway! So good to see you.” Ron claps you on the back. 
+
 “Have a great trip, dude! Tell me all about it when you get back,” you say, knowing that Ron’s #adventures will be dominating your feed for the next few months, and that you’ll fave every one of them.
 
-You [[make your way back to the market-&gt;Rahmbrot]]</tw-passagedata><tw-passagedata pid="18" name="Pommes" tags="" position="1083,352" size="100,100">You notice the unmistakable odor of deep frying. Ah yes, you’d read about this somewhere on the Internet: an enterprising immigrant to this land of potato-related innovation devised a contraption that bolts onto an electric drill and, using lathe parts, quickly turns a potato into a single huge spiral ready for the fryer. 
+You [[continue onwards towards the smell of baking bread.-&gt;Rahmbrot]]</tw-passagedata><tw-passagedata pid="18" name="Pommes" tags="" position="1083,352" size="100,100">You notice the unmistakable odor of deep frying. Ah yes, you’d read about this somewhere on the Internet: an enterprising immigrant to this land of potato-related innovation devised a contraption that bolts onto an electric drill and, using lathe parts, quickly turns a potato into a single huge spiral ready for the fryer. 
 
 Cheery mechanics and tradespeople inevitably gather around in amazement as the cook attaches another potato to the device and the fries fly out. In fact, it seems to be a very effective marketing technique. You begin to suspect that far more potatoes are processed than ever make it to the fryer.
 
 |q&gt;[
 [Spiral fries]&lt;a|
-Hot, salty, and greasy. A perfect complement to Glühwein.
+The perfect potato chip: hot, salty, and greasy.
 
 [Spiral sweet-potato fries]&lt;b|
-They might be deep-fried, but at least they’re packed with beta carotene - that’s healthy, right?]
+They might be deep-fried, but at least they’re packed with beta carotene. That’s healthy, right?]
 
 (click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
 (click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them]]
 
-To your left, there&#39;s a (if: $seenJ)[[[cosy-looking stand-&gt;Wool]]](else:)[[[cosy-looking stand-&gt;Jürgen and Ulrike]] ], and to your right, there seems to be an (if: $seenF)[[[empty tent-&gt;Ali Express]]](else:)[[[empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
+To your left, there&#39;s a (if: $seenJ)[[[cosy-looking stand-&gt;Wool]]](else:)[[[cosy-looking stand-&gt;Jürgen and Ulrike]]], and to your right, there seems to be an (if: $seenF)[[[almost-empty tent-&gt;Ali Express]]](else:)[[[almost-empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">A tent stands out from all the others for its exceptionally bare walls and lack of decoration. It makes sense, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. Inside, spread out on the bare table, are a number of cheap electronics and accessories. The proprietor is sitting down in the corner, obviously engrossed in a Whatsapp conversation. Tinny music blares out from somewhere. A hundred blue LEDs of bluetooth speakers and phone chargers glare at you. Piled in the back are large boxes clearly from AliExpress.
 
 [Phone case with a sparkly skull]&lt;a|
 It doesn’t really seem like her style, and you can’t remember what model of phone she has, but it definitely is sparkly.
@@ -430,7 +456,7 @@ To your left, you smell the [[unmistakable scent of fry oil-&gt;Pommes]], and to
 ](else-if: $spirit &gt; 6)[
 &lt;div class=&quot;alert spirit-alert&quot;&gt;Your holiday spirit is dangerously high. You’re feeling warm, happy, and completely useless. You realize you’ve started humming “Jingle Bells” and passersby are staring at you. Any more holiday spirit, and you’ll have no choice but to go home.&lt;/div&gt;
 ](else-if: $spirit &gt; 4)[
-&lt;div class=&quot;alert spirit-alert&quot;&gt;Your holiday spirit is very high. The lights and sounds are beginning to blur. You feel fabulous, but you’re losing your focus. Be careful, or you’re going to have to go home – and you’ll be hung over on tomorrow’s flight.&lt;/div&gt;]
+&lt;div class=&quot;alert spirit-alert&quot;&gt;Your holiday spirit is very high. The lights and sounds are beginning to blur. You feel fabulous, but you’re losing your focus. Careful, or you’re going to have to go home.&lt;/div&gt;]
 (if: $hunger &gt; 10)[&lt;div class=&quot;alert hunger-alert&quot;&gt;
 You&#39;re really hungry now, and your holiday spirit is fading fast.&lt;/div&gt;
 ](else-if: $hunger &gt; 7)[&lt;div class=&quot;alert hunger-alert&quot;&gt;
@@ -493,7 +519,7 @@ of these is satisfiable. So, randomly assign all the vars, then pick an ideal gi
 	(set: $pFood to &quot;sweet&quot;)
 ]
 
-}</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="195,190" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="706,900" size="100,100">Very dear family and friends:
+}</tw-passagedata><tw-passagedata pid="23" name="Spirit-too-low" tags="" position="226,38" size="100,100">(set: $showFooter to 0)Your holiday spirit is too low to shop any more. You’re freezing, it’s starting to drizzle, and it’s time for [[you to go home-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="24" name="Spirit-too-high" tags="" position="195,190" size="100,100">(set $showFooter to 0)Your holiday spirit is too high to shop any more. You stumble out of the Weihnachtsmarkt and towards the U-Bahn station, singing “Rudolph the Red-Nosed Reindeer.” It is DEFINITELY bedtime for you. [[Tomorrow’s transatlantic flight is not going to be fun-&gt;Newark Airport]].</tw-passagedata><tw-passagedata pid="25" name="Start Screen" tags="" position="706,900" size="100,100">Very dear family and friends:
 
 As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love about life in Germany, but we particularly love the Weihnachtsmärkte, or Christmas markets. So this Christmas, we wanted to bring the Weihnachtsmarkt experience to you:
 
@@ -501,14 +527,14 @@ As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love
 
 &lt;em&gt;This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. – Casey &amp; Molly, December 2017&lt;/em&gt;</tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="630,45" size="100,100">It’s two days later. You’ve recovered from your jet lag. Your family sits in the living room, ready to exchange gifts.
 
-You hand your mother-in-law a wrapped gift. “You brought me something all the way from Germany!” she says, gently peeling the wrapping paper off. 
-(set: $joy to 0)
-{(if: $gift contains $pColor)[Her favorite color is $pColor and so is her gift.(set: $joy to it + 1)
+(set: $partialSuccess to &quot;&quot;)You hand your mother-in-law a wrapped gift. “You brought me something all the way from Germany!” she says, gently peeling the wrapping paper off. 
+(set: $joy to 0){(if: $gift contains $pColor)[(set: $partialSuccess to it + &quot;Her favorite color is $pColor and so is her gift.&quot;)(set: $joy to it + 1)
 ]}
-{(if: $pRelig is true and $gift contains &quot;nativity&quot;)[The nativity set will fit right in with her other religious decorations.(set: $joy to it + 1)]}
-{(if: $pFood is &quot;healthy&quot;)[(if: &quot;herbal&quot; is in $gift)[The herbal tea is way healthier than the usual Christmas fare – perfect for somebody health-conscious.(set: $joy to it + 1)]](else:)[(if: &quot;drinking&quot; is in $gift)[The chocolate will be perfect for her sweet tooth.(set: $joy to it + 1)](else-if: &quot;nativity&quot; is in $gift)[The chocolate will be perfect for her sweet tooth.(set: $joy to it + 1)]]}
-{(if: $pTemp is &quot;warm&quot;)[(if: &quot;hammer&quot; is in $gift)[The cool and breezy hammer pants are perfect for this warm climate.(set: $joy to it + 1)](else-if: &quot;skirt&quot; is in $gift)[The cool and breezy skirt is perfect for this warm climate.(set: $joy to it + 1)]](else:)[(if: &quot;alpaca&quot; is in $gift)[The fuzzy alpaca wool is always good in a cold climate.(set: $joy to it + 1)](else-if: &quot;herbal&quot; is in $gift)[A warm mug of herbal tea will be lovely in this cold, snowy climate.(set: $joy to it + 1)](else-if: &quot;drinking&quot; is in $gift)[A warm mug of hot chocolate will be lovely in this cold, snowy climate.(set: $joy to it + 1)]]}
-
+{(if: $pRelig is true and $gift contains &quot;nativity&quot;)[(set: $partialSuccess to it + &quot;The nativity set will fit right in with her other religious decorations.&quot;)(set: $joy to it + 1)]}
+{(if: $pFood is &quot;healthy&quot;)[(if: &quot;herbal&quot; is in $gift)[(set: $partialSuccess to it + &quot;The herbal tea is way healthier than the usual Christmas fare – perfect for somebody health-conscious.&quot;)(set: $joy to it + 1)]](else:)[(if: &quot;drinking&quot; is in $gift)[(set: $partialSuccess to it + &quot;The chocolate will be perfect for her sweet tooth.&quot;)(set: $joy to it + 1)](else-if: &quot;nativity&quot; is in $gift)[(set: $partialSuccess to it + &quot;The chocolate will be perfect for her sweet tooth.&quot;)(set: $joy to it + 1)]]}
+{(if: $pTemp is &quot;warm&quot;)[(if: &quot;hammer&quot; is in $gift)[(set: $partialSuccess to it + &quot;The cool and breezy hammer pants are perfect for this warm climate.&quot;)(set: $joy to it + 1)](else-if: &quot;skirt&quot; is in $gift)[(set: $partialSuccess to it + &quot;The cool and breezy skirt is perfect for this warm climate.&quot;)(set: $joy to it + 1)]](else:)[(if: &quot;alpaca&quot; is in $gift)[(set: $partialSuccess to it + &quot;The fuzzy alpaca wool is perfect for this cold climate.&quot;)(set: $joy to it + 1)](else-if: &quot;herbal&quot; is in $gift)[(set: $partialSuccess to it + &quot;A warm mug of herbal tea will be lovely in this cold, snowy climate.&quot;)(set: $joy to it + 1)](else-if: &quot;drinking&quot; is in $gift)[(set: $partialSuccess to it + &quot;A warm mug of hot chocolate will be lovely in this cold, snowy climate.&quot;)(set: $joy to it + 1)]]}
+{(if: $pSize is &quot;tall&quot; and $gift contains &quot;hammer&quot;)[(set: $partialSuccess to it + &quot;The pants fit her tall frame perfectly.&quot;)(set: $joy to it + 1)]}
+{(if: $pSize is &quot;short&quot; and $gift contains &quot;skirt&quot;)[(set: $partialSuccess to it + &quot;The skirt is exactly the right length for your petite mother-in-law.&quot;) (set: $joy to it + 1)]}
 (if: $joy is 0)[
 	She raises an eyebrow as she unwraps the (print: $gift).
 
@@ -525,7 +551,7 @@ You hand your mother-in-law a wrapped gift. “You brought me something all the 
 
 	&lt;div class=&quot;alert end-score&quot;&gt;Dude, not cool. You&#39;ve done a lousy job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)]&lt;/div&gt;
 ](else-if: $joy is 1)[
-	She smiles as she unwraps the (print: $gift). She really seems to appreciate the thought. 
+	She smiles as she unwraps the (print: $gift). She really seems to appreciate the thought. $partialSuccess
 	(if: &quot;alpaca&quot; is in $gift)[
 		However, you belatedly remember that her favorite color is actually $pColor.
 	](else-if: $pSize is &quot;tall&quot; and $gift contains &quot;skirt&quot;)[
@@ -554,7 +580,7 @@ You hand your mother-in-law a wrapped gift. “You brought me something all the 
 	(else-if: $joy is 2)[
 	She beams with delight as she unwraps the (print: $gift). &quot;It&#39;s just perfect!&quot; she says. &quot;Exactly what I wanted! Thank you for being so thoughtful.&quot; She sets the (print: $gift) on the coffee table and gives you a big hug.
 	&lt;div class=&quot;alert end-score&quot;&gt;Congratulations! You&#39;ve done a wonderful job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)]&lt;/div&gt;]
-</tw-passagedata><tw-passagedata pid="27" name="Bought Confirmation" tags="" position="225,640" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;Bought $gift.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Replacement Confirmation" tags="" position="255,504" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;You discard your previous gift and buy $gift.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="Insufficient Funds" tags="" position="78,738" size="100,100">&lt;div class=&quot;broke alert&quot;&gt;You can&#39;t afford that!&lt;/div&gt;</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="27" name="Bought Confirmation" tags="" position="225,640" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;Bought $gift.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Replacement Confirmation" tags="" position="255,504" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;You discard your previous gift and buy $gift.&lt;/div&gt;</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
