@@ -271,10 +271,10 @@ Jürgen got to know your dad back in high school: Jürgen did an exchange year i
 
 &quot;I wish I could, but I don&#39;t have time,&quot; you say. &quot;I&#39;m actually leaving tomorrow to go visit my family.&quot;
 
-(if: $pTemp is &quot;cold&quot;)[&quot;Ah, too bad you&#39;re going somewhere cold,&quot; says Jürgen. &quot;We&#39;re going to Mallorca for New Years. One of these years, you should join us! Anyway, do give our best wishes to your father, when you see him.&quot;]
-(else-if: $pTemp is &quot;warm&quot;)[&quot;At least you are going somewhere warm,&quot; says Ulrike. &quot;We need to get out of this cold, too. We are excited for our trip to Mallorca over New Years. Anyway, do give our best wishes to your father, when you see him.&quot;]
+(if: $pTemp is &quot;cold&quot;)[&quot;Too bad your family lives in such a cold place,&quot; says Jürgen. &quot;We&#39;re going to Mallorca for New Years. One of these years, you should join us! Anyway, do give our best wishes to your father, when you see him.&quot;]
+(else-if: $pTemp is &quot;warm&quot;)[&quot;At least your family lives somewhere nice and warm,&quot; says Ulrike. &quot;We can't wait to get away from this cold weather! That's why we're going to Mallorca over New Years. Anyway, do give our best wishes to your father, when you see him.&quot;]
 
-&quot;Of course I&#39;ll say hi to him for you, and you two have a lovely trip,&quot; you say. &quot;Don&#39;t forget your sunscreen!&quot; The three of you laugh, exchange another hug, and [[part ways-&gt;Wool]].
+&quot;Of course I&#39;ll say hi to him for you, and you two have a lovely trip,&quot; you say. The three of you exchange another hug and [[part ways-&gt;Wool]].
 </tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set: $showFooter to 0)(set: $spirit to 2)
 
 Next day. You successfully got on a plane at Tegel, America-bound. You landed, seven hours later, at Newark Airport, where you only have a 45-minute layover. You knew this was kind of stupid, but it was the cheapest flight. 
@@ -374,15 +374,15 @@ This knitted tube is the opposite of a crop top: it covers you from mid-back to 
 To your left is [[the entrance-&gt;Market entrance]], and to your right are some [[fried potatoes-&gt;Pommes]].</tw-passagedata><tw-passagedata pid="15" name="Hippie Stuff" tags="" position="655,240" size="100,100">The Weihnachtsmarkt mostly smells of cinnamon and warm wine. But as you approach this stall, you get a massive whiff of patchouli. 
 
 [“Verdauungshilfe” herb tea infusion]&lt;a|
-This mixture of flower petals and leaves comes in an attractive tin, tied with a raffia bow, and it’s supposed to aid digestion. Tea is always nice on a chilly winter day, and good digestion never goes out of style. You ask the proprietor how it tastes. “It’s very healthy,” she replies.
+This mixture of flower petals and leaves comes in an attractive tin tied with a raffia bow. It’s supposed to aid digestion. Tea is always nice on a chilly winter day in a cold climate, and good digestion never goes out of style. You ask the proprietor how it tastes. “It’s very healthy,” she replies.
 (click: ?a)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;herbal digestion tea&quot;)(display:&quot;Replacement Confirmation&quot;)](if: $gift is not &quot;herbal digestion tea&quot;)[(set: $gift to &quot;herbal digestion tea&quot;)(set: $wallet to it - 10)(display: &quot;Bought Confirmation&quot;)]]
 
 [Paisley hammer pants]&lt;b|
-These one-size pants, made from cheerful paisley-print thin cotton, have a crotch that hangs somewhere around the knees. You’ve seen lots of women (and a few men) wearing pants like this around Kreuzberg and Friedrichshain – they’re fine, as long as you aren’t in a hurry to get anywhere. These pants would not be a good gift for a short person on the go, as the crotch would hang closer to ankle-level, seriously impeding their movement.
+These one-size pants, made from cheerful paisley-print thin cotton, have a crotch that hangs somewhere around the knees. You’ve seen lots of women (and a few men) wearing pants like this around Kreuzberg and Friedrichshain – they’re fine, as long as you aren’t in a hurry to get anywhere. These pants would not be a good gift for a short person on the go, as the crotch would hang closer to ankle-level, seriously impeding their movement. Also, they're not very warm.
 (click: ?b)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;paisley hammer pants&quot;)(display:&quot;Replacement Confirmation&quot;)](else-if: $gift is not &quot;paisley hammer pants&quot;)[(set: $gift to &quot;paisley hammer pants&quot;)(set: $wallet to it - 20)(display: &quot;Bought Confirmation&quot;)]]
 
 [Tie-dye maxi skirt]&lt;c|
-This thin, filmy cotton skirt looks extremely comfortable, appropriate for anything from a trip to the farmer&#39;s market to... well, next week&#39;s trip to the farmer&#39;s market. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a so-called maxi skirt; it would be ankle-length on a short person, but awkwardly calf-length on a tall person.
+This thin, filmy cotton skirt looks extremely comfortable, appropriate for anything from a trip to the farmer&#39;s market to... well, next week&#39;s trip to the farmer&#39;s market. You hold it up to your waist in front of the mirror, and realize that it’s not terribly long for a so-called maxi skirt; it would be ankle-length on a short person, but awkwardly calf-length on a tall person. It's also not exactly warm.
 (click: ?c)[(if: $gift is not &quot;none&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(display:&quot;Replacement Confirmation&quot;)](else-if: $gift is not &quot;tie-dye maxi skirt&quot;)[(set: $gift to &quot;tie-dye maxi skirt&quot;)(set: $wallet to it - 20)(display: &quot;Bought Confirmation&quot;)]]
 
 To the left there&#39;s the scent of [[chestnuts-&gt;Chestnuts]], and to the right you see some kind of (if: $seenR)[[[cheesy bread-&gt;Ron]]](else:)[[[cheesy bread-&gt;Rahmbrot]]].</tw-passagedata><tw-passagedata pid="16" name="Chestnuts" tags="" position="488,385" size="100,100">Ah, roasted chestnuts: simple, delicious, truly the Ur-Snack of the Weihnachtsmarkt. 
