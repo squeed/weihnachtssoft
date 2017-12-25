@@ -74,7 +74,7 @@ body {
 		min-height: 2.4em;
 	}
 	.alert.buying-confirmation {
-		background-color: rgba(255,255,255,.4);
+		background-color: rgba(255,255,255,.3);
 		margin: .2em 0;
 		padding: .3em .8em;
 		font-weight: 700;
@@ -89,7 +89,7 @@ body {
 	}
 	.alert.end-score {
 		font-weight: 700;
-		background-color: rgba(255,255,255,.4);
+		background-color: rgba(255,255,255,.3);
 		margin: .2em 0;
 		padding: .3em .8em;
 				border-radius: 4px;
@@ -179,9 +179,7 @@ You look around. There&#39;s a store selling (if: $seenA)[ [[chocolate-&gt;Choco
 (set: $seenA to true)
 Hey, it&#39;s your friend Alessandro!
 
-You’ve seen Alessandro at more than a few tech-related meetups, though his real passion is music: he once gave a talk about some open-source music software. 
-
-He’s a smart guy, and nice to boot; obviously, his date thinks so too. They’re leaning towards each other, hands clasped around mugs of Glühwein. 
+He’s a talented programmer, a fabulous DJ, and nice to boot; obviously, his date thinks so too. They’re leaning towards each other, hands clasped around mugs of Glühwein. 
 
 You probably shouldn’t interrupt, but you really do want to say hi. “Hey, Alessandro! How was your set last week at Krankenmaul?” 
 
@@ -200,9 +198,9 @@ You probably shouldn’t interrupt, but you really do want to say hi. “Hey, Al
 (if: $pRelig is false)[Alessandro laughs. “Ah, family! The difference is that you don’t have to spend hours and hours in church when you&#39;d rather just be hanging out. You&#39;re lucky your mother-in-law isn&#39;t as religious as mine.&quot;]
 (if: $pRelig is true)[Alessandro laughs. “Ah, family! So that means for both of us lots of sitting in the church.”
 
-“You know, I don’t mind it,” you say. “It reminds us both of our childhoods, even if we don’t really share our parents’ beliefs anymore. The music is nice. And they serve Christmas cookies afterwards.”
+“You know, I like going to church,” you say. “It reminds me of my childhood. The music is nice. And they serve Christmas cookies afterwards.”
 
-“Oh, it’s not the church that bothers me, it’s the constant questions about when I’m going to settle down with a nice girl. You’d think she’d eventually stop asking.” He sighs.]
+“Oh, it’s not the church that bothers me, it’s the constant questions about when I’m going to settle down with a nice girl. You’d think my mother would eventually stop asking.” He sighs.]
 
 At this point, David interrupts. “You must be in a hurry. Have a nice trip,” he says pointedly.
 
@@ -215,7 +213,7 @@ You decide to visit one of the many Glühwein vendors.
 A spiced, fruity red wine, kind of like hot sangria. The classic winter drink. 
 
 [Weißer Glühwein]&lt;b|
-Did you know you can make Glühwein with white wine, too? It's also delicious.
+Did you know you can make Glühwein with white wine, too? It's equally delicious.
 
 [Feuerzangenbowle]&lt;c|
 Spiced dry red wine, sweetened by a flaming, rum-soaked sugar loaf. Boom!
@@ -280,7 +278,7 @@ Jürgen got to know your dad back in high school: Jürgen did an exchange year i
 &quot;Of course I&#39;ll say hi to him for you, and you two have a lovely trip,&quot; you say. &quot;Don&#39;t forget your sunscreen!&quot; The three of you laugh, exchange another hug, and [[part ways-&gt;Wool]].
 </tw-passagedata><tw-passagedata pid="10" name="Newark Airport" tags="place" position="402,111" size="100,100">(set: $showFooter to 0)(set: $spirit to 2)
 
-It&#39;s the next day. You successfully got on the plane at Tegel and landed, seven hours later, at Newark Airport, where you only have a 45-minute layover. You knew this was a bit stupid, but it was the cheapest flight. 
+Next day. You successfully got on a plane at Tegel, America-bound. You landed, seven hours later, at Newark Airport, where you only have a 45-minute layover. You knew this was kind of stupid, but it was the cheapest flight. 
 
 (if: $gift is &quot;none&quot;)[As soon as you walk off the jetway, you break into a jog. You really do have to get something for your mother-in-law, even if it&#39;s not perfect. As you&#39;re running through the terminal, you decide to duck into a newsstand to grab something, anything.
 
@@ -295,7 +293,7 @@ Overpriced pizza from Famous Famiglia&#39;s. Pepperoni.]&lt;d|]
 
 (click: ?a)[(replace: ?q)[(if: $gift is not &quot;Newark t-shirt&quot;)[(set: $gift to &quot;Newark t-shirt&quot;)(set: $wallet to it - 20)You fling a 20 € bill at the cashier. &quot;This is European money,&quot; he says, blinking at it. &quot;I can give you an exchange rate of –&quot; You cut him off by grabbing the bill out of his hands and extending a US credit card. He blinks again, runs the card, and – thank god – it works. You seize the shirt, stuff it into your bag, and keep running toward customs.
 
-You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do but wait. Your family gift exchange is tonight. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over-&gt;end]].]]]
+You stand anxiously in line at customs, shifting your weight, nervously fingering your purchase. Everyone else from your flight got here ahead of you, but there&#39;s nothing you can do now. Hopefully, your procrastination isn&#39;t too obvious. You can make up a story about how the Berlin Christmas markets are suddenly selling New Jersey swag, right? Your mother-in-law won&#39;t know the difference, right? Anyway, [[your travels are almost over-&gt;end]].]]]
 
 (click: ?b)[(replace: ?q)[(if: $gift is not &quot;Mets bobblehead&quot;)[(set: $gift to &quot;Mets bobblehead&quot;)(set: $wallet to it - 15)&quot;Good choice,&quot; says the cashier. &quot;Though last season was a rough one, eh? Wonder if they&#39;ll re-sign – &quot;
 He stops as you thrust your US credit card wordlessly into his face. He blinks, runs the card, and - thank god - it seems to work. &quot;Want me to wrap that up for you?&quot; asks the cashier. But you&#39;ve already grabbed the bobblehead and sprinted out of the store.
@@ -313,16 +311,15 @@ Once you clear customs, you jog to your gate. Sweet, you still have five minutes
 The five of you clink mugs, carefully meeting each other’s eyes as the mugs touch, and you take a careful sip. Hoo boy, it seems Line ordered her Glühwein “mit Schuss,” or with an extra shot. 
 (link: &quot;Bottoms up!&quot;) [(set: $spirit to it + 4)
 
-You take a big gulp of Glühwein and explain your situation to the girls. “I have to somehow find a present for my mother-in-law. I’m flying to see her tomorrow, and I don’t have anything for her. I really want to find her something that doesn’t suck.”
+As you drink your hopped-up Glühwein, you explain your situation to the girls. “I have to somehow find a present for my mother-in-law. I really want to buy her something that doesn’t suck.”
 
 “Tja,” says Laura. “Last year, I bought my mother-in-law a yoga mat, but it turned out she was allergic to the chemicals in it.”
 
 “Oje,” says Anna. “One time, I bought my mother-in-law a bathrobe, but then I learned that she likes to walk around the house naked.” 
 
 “Yeah, see,” you say, “I really don’t want to make that kind of mistake.”
-{(if: $pFood is &quot;sweet&quot;)[
 
-Lena thinks a moment. “You said that delicious chocolate fudge you brought to work was from your mother-in-law’s recipe. So she must have a sweet tooth. You&#39;ll find plenty of sweet things here.”](else:)[Lena thinks a moment. “Well, she’s vegan, right? You said that quinoa, tofu, and avocado salad you brought to our potluck was from your mother-in-law’s recipe, and that she was really good at healthy cooking. Just avoid all the candy and chocolate, and you’ll be fine.”]} 
+{(if: $pFood is &quot;sweet&quot;)[Lena thinks a moment. “You said that delicious chocolate fudge you brought to work was from your mother-in-law’s recipe. So she must have a sweet tooth. You&#39;ll find plenty of sweet things here.”](else:)[Lena thinks a moment. “Well, she’s vegan, right? You said that quinoa, tofu, and avocado salad you brought to our potluck was from your mother-in-law’s recipe, and that she was really good at healthy cooking. Just avoid all the candy and chocolate, and you’ll be fine.”]} 
 
 “My Glühwein is empty. Let’s have another round!” says Line, or maybe Anna?
 
@@ -336,8 +333,7 @@ The conversation turns to work, or rather, to the other people in the office. Li
 
 (link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].]]
 
-(click: ?no)[(replace: ?q)[“I really can’t,” you say. “Battling a Kater on a 7-hour flight is not my idea of a good way to start the holidays.” You hug everyone goodbye, wish them a “Guten Rutsch” into the new year, and head off.
-(link: &quot;Go back to the market&quot;)[(goto: (history: )&#39;s last)].]]]</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,511" size="100,100">Mmmm. Chocolate. 
+(click: ?no)[(replace: ?q)[“I really can’t,” you say. “Battling a Kater on a 7-hour flight is not my idea of a good way to start the holidays.” You hug everyone goodbye, wish them a “Guten Rutsch” into the new year, and (link: &quot;go back to the market&quot;)[(goto: (history: )&#39;s last)].]]]</tw-passagedata><tw-passagedata pid="12" name="Chocolate" tags="" position="637,511" size="100,100">Mmmm. Chocolate. 
 
 Not content at merely dominating the export market with quality industrial products, it seems that the Germans also excel at making chocolate versions of the things they already make. (Maybe they repurpose the injection molds?) Chocolate immersion blenders, chocolate wrenches and cordless drills, chocolate disk brake calipers, and chocolate insurance contracts lay before you, just to name a few things.
 
@@ -409,7 +405,7 @@ To the left you see a store selling [[hippie stuff-&gt;Hippie Stuff]], and to th
 
 “Ron, buddy! Good to see you!” You exchange back slaps. “How’s the consultancy been?” You have known Ron for two years, follow him on every social media platform, and still have no idea what his consultancy does.
 
-“Business? Booming. Business is booming. Tons of clients, tons of meetings, phone’s just always blowing up. Clients, they all want something before the end of the year, you know? Got me working like a dog. Glad to finally catch a break.” 
+“Business? Booming. Tons of clients, tons of meetings, phone’s just always blowing up. Clients, they all want something before the end of the year, you know? Got me working like a dog. Glad to finally catch a break.” 
 
 “What are you doing for the holidays?” you ask.
 
@@ -444,7 +440,7 @@ They might be deep-fried, but at least they’re packed with beta carotene. That
 (click: ?a)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 2)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them.]]
 (click: ?b)[(replace: ?q)[(set: $hunger to 0)(set: $wallet to it - 4)The fry vendor hands you a greasy paper cone full of fries. You squirt some mayo on top, and - perhaps a bit too greedily - use the tiny fork to eat them.]]
 
-To your left, there&#39;s a (if: $seenJ)[[[cozy-looking stand-&gt;Wool]]](else:)[[[cozy-looking stand-&gt;Jürgen and Ulrike]]], and to your right, there seems to be an (if: $seenF)[[[almost-empty tent-&gt;Ali Express]]](else:)[[[almost-empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">This bare-bones tent isn&#39;t even trying. It&#39;s probably just as well, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or African Heritage Days. 
+To your left, there&#39;s a (if: $seenJ)[[[cozy-looking stand-&gt;Wool]]](else:)[[[cozy-looking stand-&gt;Jürgen and Ulrike]]], and to your right, there seems to be an (if: $seenF)[[[almost-empty tent-&gt;Ali Express]]](else:)[[[almost-empty tent-&gt;Freddy]]].</tw-passagedata><tw-passagedata pid="19" name="Ali Express" tags="" position="980,222" size="100,100">This bare-bones tent isn&#39;t even trying. It&#39;s probably just as well, given that you’ve seen the exact same one at every street fair and festival, be it Easter, May Day, Oktoberfest, German Reunification, or various Heritage Days. 
 
 Spread out on the bare table are a number of cheap electronics and accessories. The proprietor hunches over his phone, engrossed in a Whatsapp conversation while listening to music from his phone speakers. A hundred blue LEDs of bluetooth speakers and phone chargers light up the table. Piled in the back are large boxes, clearly from AliExpress.
 
@@ -558,7 +554,7 @@ As you know, we&#39;re two Americans living in Berlin. There&#39;s a lot to love
 
 This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about to find out why. <br/>
 
-<em>– Casey &amp; Molly, December 2017</em></tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="630,45" size="100,100">It’s two days later. You’ve recovered from your jet lag. Your family sits in the living room, ready to exchange gifts.
+<em>– Casey &amp; Molly, December 2017</em></tw-passagedata><tw-passagedata pid="26" name="end" tags="" position="630,45" size="100,100">Two days later. You’ve recovered from your jet lag. Your family sits in the living room, ready to exchange gifts.
 
 (set: $partialSuccess to &quot;&quot;)You hand your mother-in-law a wrapped gift. “You brought me something all the way from Germany!” she says, gently peeling the wrapping paper off. 
 (set: $joy to 0){(if: $gift contains $pColor)[(set: $partialSuccess to it + &quot;Her favorite color is $pColor and so is her gift.&quot;)(set: $joy to it + 1)]}
@@ -569,7 +565,7 @@ This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about 
 {(if: $pSize is &quot;short&quot; and $gift contains &quot;skirt&quot;)[(set: $partialSuccess to it + &quot;The skirt is exactly the right length for your petite mother-in-law.&quot;) (set: $joy to it + 1)]}
 (if: $joy is 0)[She raises an eyebrow as she unwraps the (print: $gift).
 
-	(if: &quot;bobblehead&quot; is in $gift)[“Well, that’s something,” she says. “Why don’t I make another pot of tea?” She sets the bobblehead on the coffee table and goes into the other room. The bobblehead’s head bobbles gently. You resolve – as usual – not to procrastinate with your Christmas shopping next year. ](else-if: &quot;newark&quot; is in $gift)[Your mother-in-law holds the shirt up, not quite sure what to say. You excuse yourself to go drop another shot of whiskey into your eggnog, and resolve yet again not to procrastinate with your Christmas shopping.](else-if: &quot;fidget&quot; is in $gift)[Your mother-in-law has never seen one of these before. One of your cousins demonstrates it for her. “That’s all it does?” she says. “Spins around? Interesting.” ](else-if: &quot;phone&quot; is in $gift)[“This is for my phone?” says your mother-in-law. “I’m not sure it’ll fit. I think I have a Samsung something. Why don’t you give this to someone else?”
+	(if: &quot;bobblehead&quot; is in $gift)[“Well, that’s something,” she says. “Why don’t I make another pot of tea?” She sets the bobblehead on the coffee table and goes into the other room. The bobblehead’s head bobbles gently. You resolve – as usual – not to procrastinate with your Christmas shopping next year. ](else-if: &quot;t-shirt&quot; is in $gift)[Your mother-in-law holds the shirt up, not quite sure what to say. You excuse yourself to go drop another shot of whiskey into your eggnog, and resolve yet again not to procrastinate with your Christmas shopping.](else-if: &quot;fidget&quot; is in $gift)[Your mother-in-law has never seen one of these before. One of your cousins demonstrates it for her. “That’s all it does?” she says. “Spins around? Interesting.” ](else-if: &quot;phone&quot; is in $gift)[“This is for my phone?” says your mother-in-law. “I’m not sure it’ll fit. I think I have a Samsung something. Why don’t you give this to someone else?”
 	
 	“Ooh, I’ll take it,” says your 12-year-old cousin. Good, everyone’s happy. Sort of.]
 	(else-if: &quot;pants&quot; is in $gift)[Not only are these pants way too long for your petite mother-in-law, they&#39;re made of very thin fabric that&#39;s not appropriate for this cold climate. ](else-if: &quot;drinking&quot; is in $gift)[Not only is your mother-in-law a health nut who doesn&#39;t consume sweets, a hot beverage is out of place in this warm climate.](else-if: &quot;alpaca&quot; is in $gift)[Not only is fuzzy alpaca wool out of place in this warm climate, your mother-in-law&#39;s favorite color is actually $pColor.](else-if: &quot;tea&quot; is in $gift)[
