@@ -576,7 +576,7 @@ This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about 
 		Not only is your mother-in-law a health nut who doesn&#39;t consume sweets, she&#39;s not at all religious, and nativity scenes are not her thing.
 	]
 
-	&lt;div class=&quot;alert end-score&quot;&gt;Dude, not cool. You&#39;ve done a lousy job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)]&lt;/div&gt;
+	&lt;div class=&quot;alert end-score&quot;&gt;Dude, not cool. You&#39;ve done a lousy job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)](Your mother-in-law will be slightly different every time.)&lt;/div&gt;
 ](else-if: $joy is 1)[
 	She smiles as she unwraps the (print: $gift). She really seems to appreciate the thought. $partialSuccess
 	(if: &quot;alpaca&quot; is in $gift)[
@@ -603,11 +603,11 @@ This game is dedicated to our mothers-in-law, Regina and Anne. You&#39;re about 
 	](else-if: $pFood is &quot;sweet&quot; and $gift contains &quot;tea&quot;)[
 		However, she has a notorious sweet tooth and isn&#39;t interested in anything health-related, not even herbal tea.
 	]
-	&lt;div class=&quot;alert end-score&quot;&gt;Could have been worse. Given that you were under time pressure, you did an okay job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)] &lt;/div&gt;]
+	&lt;div class=&quot;alert end-score&quot;&gt;Could have been worse. Given that you were under time pressure, you did an okay job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)] (Your mother-in-law will be slightly different every time.)&lt;/div&gt;]
 	(else-if: $joy is 2)[
 	She beams with delight as she unwraps the (print: $gift). &quot;It&#39;s just perfect!&quot; she says. &quot;Thank you for being so thoughtful. (if: $gift contains &quot;alpaca&quot;)[It&#39;s my favorite color, and it will keep me cozy and warm.](if: $gift contains &quot;nativity&quot;)[I do love chocolate, and it&#39;ll fit right in with my collection of nativity scenes.](if: $gift contains &quot;drinking&quot;)[I do love chocolate, and this will be so tasty on cold winter nights.](if: $gift contains &quot;tea&quot;)[This looks so healthy, and I love a cup of hot herb tea on cold winter nights.](if: $gift contains &quot;pants&quot;)[These are so cool and breezy, and they fit me perfectly.](if: $gift contains &quot;skirt&quot;)[It&#39;s so cool and breezy, and it&#39;s just the right length.]
 	She sets the (print: $gift) on the coffee table and gives you a big hug.
-	&lt;div class=&quot;alert end-score&quot;&gt;Congratulations! You&#39;ve done a wonderful job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)]&lt;/div&gt;]
+	&lt;div class=&quot;alert end-score&quot;&gt;Congratulations! You&#39;ve done a wonderful job choosing a gift for your mother-in-law. [Try again?]&lt;restart|(click: ?restart)[(reload:)](Your mother-in-law will be slightly different every time.) &lt;/div&gt;]
 </tw-passagedata><tw-passagedata pid="27" name="Bought Confirmation" tags="" position="225,640" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;Bought $gift.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="Replacement Confirmation" tags="" position="255,504" size="100,100">&lt;div class=&quot;alert buying-confirmation&quot;&gt;You discard your previous gift and buy $gift.&lt;/div&gt;</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
